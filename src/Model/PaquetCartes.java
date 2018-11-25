@@ -22,11 +22,9 @@ public class PaquetCartes {
     public Carte tirerCarte(){
         return packetCartes.poll();
     }
-
     public void add(Carte carte){
         packetCartes.add(carte);
     }
-
     public void melangerPacket(){
         List<Carte> list = new ArrayList<>();
         for (Carte c : packetCartes) {
