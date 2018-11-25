@@ -12,17 +12,17 @@ public class InitCartes {
         paquetLieu = new PaquetCartes();
         paquetSuspect = new PaquetCartes();
 
-        paquetSuspect.add(new CarteSuspect("Le Blanc", new Image("Image/blanc.png")));
-        paquetSuspect.add(new CarteSuspect("Le Rouge", new Image("Image/rouge.png")));
-        paquetSuspect.add(new CarteSuspect("Le jaune", new Image("Image/jaune.png")));
+        paquetSuspect.add(new CarteSuspect("Le Blanc", new Image("Image/Personnage/blanc.png")));
+        paquetSuspect.add(new CarteSuspect("Le Rouge", new Image("Image/Personnage/rouge.png")));
+        paquetSuspect.add(new CarteSuspect("Le jaune", new Image("Image/Personnage/jaune.png")));
 
-        paquetArme.add(new CarteArme("Le chandelier", new Image("Image/chandelier.png")));
-        paquetArme.add(new CarteArme("Le pistolet", new Image("Image/pistolet.png")));
-        paquetArme.add(new CarteArme("Le corde", new Image("Image/corde.png")));
+        paquetArme.add(new CarteArme("Le chandelier", new Image("Image/Arme/chandelier.png")));
+        paquetArme.add(new CarteArme("Le pistolet", new Image("Image/Arme/pistolet.png")));
+        paquetArme.add(new CarteArme("Le corde", new Image("Image/Arme/corde.png")));
 
-        paquetLieu.add(new CarteLieu("La salle a manger", new Image("Image/salleAManger.png")));
-        paquetLieu.add(new CarteLieu("La cuisine", new Image("Image/cuisine.png")));
-        paquetLieu.add(new CarteLieu("Le salon", new Image("Image/salon.png")));
+        paquetLieu.add(new CarteLieu("La salle a manger", new Image("Image/Piece/salleAManger.png")));
+        paquetLieu.add(new CarteLieu("La cuisine", new Image("Image/Piece/cuisine.png")));
+        paquetLieu.add(new CarteLieu("Le salon", new Image("Image/Piece/salon.png")));
 
         melangerPaquets();
     }
