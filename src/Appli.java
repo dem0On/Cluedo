@@ -5,7 +5,8 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -22,11 +23,13 @@ import java.util.List;
 
 public class Appli extends Application {
 
+
     @Override
     public void start(Stage primaryStage){
+        boolean carteAffichee=false;
         primaryStage.setTitle("Cluedo");
         Group root = new Group();
-        Cluedo cluedo = new Cluedo(2);
+        Cluedo cluedo = new Cluedo(4);
         int WIDTH = 1000;
         int HEIGHT = 1000;
 
@@ -34,19 +37,28 @@ public class Appli extends Application {
         BorderPane borderPaneRoot = new BorderPane();
         Scene scene = new Scene(borderPaneRoot,WIDTH,HEIGHT, Color.LIGHTGREY);
         primaryStage.setScene(scene);
-
         HBox hBox1 = new HBox();
-        hBox1.getChildren().add(fenetre);
+        Button buttoncarte = new Button("Voire mes cartes");
+        Button buttoncarteclose = new Button("Cacher vos cartes");
+        hBox1.getChildren().addAll(buttoncarte);
+
+        buttoncarte.setOnAction(value ->  {
+                hBox1.getChildren().addAll(fenetre,buttoncarteclose);
+                hBox1.getChildren().remove(buttoncarte);
+        });
+        buttoncarteclose.setOnAction(value ->  {
+            hBox1.getChildren().removeAll(fenetre,buttoncarteclose);
+            hBox1.getChildren().add(buttoncarte);
+        });
+
 
         VBox vBox1 = new VBox();
-
         Image plateau = new Image("Image/plateau.jpg");
         ImageView iv = new ImageView(plateau);
         iv.setFitWidth(650);
         iv.setFitHeight(650);
 
         vBox1.getChildren().add(iv);
-
         borderPaneRoot.setRight(vBox1);
         borderPaneRoot.setTop(hBox1);
         primaryStage.show();
