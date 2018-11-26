@@ -38,7 +38,7 @@ public class Appli extends Application {
         Scene scene = new Scene(borderPaneRoot,WIDTH,HEIGHT, Color.LIGHTGREY);
         primaryStage.setScene(scene);
         HBox hBox1 = new HBox();
-        Button buttoncarte = new Button("Voire mes cartes");
+        Button buttoncarte = new Button("Voir mes cartes");
         hBox1.getChildren().addAll(buttoncarte);
 
         buttoncarte.setOnAction(value ->  {

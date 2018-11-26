@@ -5,14 +5,15 @@ import java.util.List;
 
 public class Cluedo {
     private List<Main> listJoueurs;
-    private InitCartes initCartes;
     private int nbJoueur;
     private Meurtrier meutrier;
+    private TypeCase plateau[][];
 
     public Cluedo(int nbJoueur) {
         this.nbJoueur = nbJoueur;
         listJoueurs = new ArrayList<>();
-        initCartes = new InitCartes();
+        InitPlateau initPlateau = new InitPlateau();
+        plateau = initPlateau.getPlateau();
         for (int i = 0; i < nbJoueur; i++) {
             listJoueurs.add(new Main());
         }
@@ -21,6 +22,7 @@ public class Cluedo {
     }
 
     private void initJeu(){
+        InitCartes initCartes = new InitCartes();
         PaquetCartes paquetLieu = initCartes.getPaquetLieu();
         PaquetCartes paquetArme = initCartes.getPaquetArme();
         PaquetCartes paquetMeutrtrier = initCartes.getPaquetSuspect();
