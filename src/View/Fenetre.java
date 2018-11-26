@@ -13,7 +13,7 @@ public class Fenetre extends Parent {
 
     public Fenetre( Cluedo cluedo){
         this.cluedo = cluedo;
-        Canvas canvas = new Canvas(500, 200);
+        Canvas canvas = new Canvas(200, 200);
         graphicsContext = canvas.getGraphicsContext2D();
         afficherMain(cluedo.getListJoueurs().get(0));
         this.getChildren().add(canvas);

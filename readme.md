@@ -14,6 +14,6 @@ Cluedo est un jeu de société dans lequel les joueurs doivent découvrir parmi 
 ### Membres de l'équipe
 
 * **Valentin RATTE** - *Product Owner* -
-* **Lucas GUERREROT** - *Dev* -
+* **Lucas GUERRERO** - *Dev* -
 * **Lucas SINGIER** - *Dev* -
 * **Benjamin PELLETIER** - *Dev* -
