@@ -28,38 +28,25 @@ public class Appli extends Application {
     public void start(Stage primaryStage){
         boolean carteAffichee=false;
         primaryStage.setTitle("Cluedo");
-        Group root = new Group();
-        Cluedo cluedo = new Cluedo(4);
+        //Group root = new Group();
+        Cluedo cluedo = new Cluedo(3);
         int WIDTH = 1000;
-        int HEIGHT = 1000;
+        int HEIGHT = 900;
 
-        Fenetre fenetre = new Fenetre(cluedo);
         BorderPane borderPaneRoot = new BorderPane();
+        Fenetre fenetre = new Fenetre(cluedo, primaryStage);
         Scene scene = new Scene(borderPaneRoot,WIDTH,HEIGHT, Color.LIGHTGREY);
         primaryStage.setScene(scene);
         HBox hBox1 = new HBox();
         Button buttoncarte = new Button("Voire mes cartes");
-        Button buttoncarteclose = new Button("Cacher vos cartes");
         hBox1.getChildren().addAll(buttoncarte);
 
         buttoncarte.setOnAction(value ->  {
-                hBox1.getChildren().addAll(fenetre,buttoncarteclose);
-                hBox1.getChildren().remove(buttoncarte);
-        });
-        buttoncarteclose.setOnAction(value ->  {
-            hBox1.getChildren().removeAll(fenetre,buttoncarteclose);
-            hBox1.getChildren().add(buttoncarte);
+            fenetre.afficher1();
         });
 
+        borderPaneRoot.setStyle("-fx-background-image: url('Image/plateau.jpg');");
 
-        VBox vBox1 = new VBox();
-        Image plateau = new Image("Image/plateau.jpg");
-        ImageView iv = new ImageView(plateau);
-        iv.setFitWidth(650);
-        iv.setFitHeight(650);
-
-        vBox1.getChildren().add(iv);
-        borderPaneRoot.setRight(vBox1);
         borderPaneRoot.setTop(hBox1);
         primaryStage.show();
     }

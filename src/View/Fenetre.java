@@ -3,25 +3,45 @@ package View;
 import Model.Cluedo;
 import Model.Main;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.HBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 
 public class Fenetre extends Parent {
     private Cluedo cluedo;
-    private GraphicsContext graphicsContext;
+    private Canvas canvas;
+    private Stage primaryStage;
+    private Stage popup;
 
-    public Fenetre( Cluedo cluedo){
+    public Fenetre(Cluedo cluedo, Stage primaryStage){
+        popup = new Stage();
         this.cluedo = cluedo;
-        Canvas canvas = new Canvas(200, 200);
-        graphicsContext = canvas.getGraphicsContext2D();
+        this.primaryStage = primaryStage;
+        canvas = new Canvas(1100, 300);
+        initPopup();
+    }
+
+    private void initPopup(){
+        popup.initModality(Modality.APPLICATION_MODAL);
+        popup.initOwner(primaryStage);
+        HBox hBox1 = new HBox();
+        hBox1.getChildren().add(canvas);
+        Scene scene = new Scene(hBox1);
+        popup.setScene(scene);
+    }
+
+    public void afficher1(){
         afficherMain(cluedo.getListJoueurs().get(0));
-        this.getChildren().add(canvas);
     }
 
     public void afficherMain(Main main){
+        canvas.getGraphicsContext2D().restore();
         for (int i = 0; i < main.getMain().size(); i++) {
-            graphicsContext.drawImage(main.getMain().get(i).getImageCarte(), 20+i*100, 50);
+            canvas.getGraphicsContext2D().drawImage(main.getMain().get(i).getImageCarte(), 20+i*160, 50);
         }
+        popup.show();
     }
 }
