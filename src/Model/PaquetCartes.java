@@ -3,13 +3,13 @@ package Model;
 import java.util.*;
 
 public class PaquetCartes {
-    private Queue<Carte> packetCartes;
+    private ArrayList<Carte> packetCartes;
 
     public PaquetCartes() {
-        packetCartes = new ArrayDeque<>();
+        packetCartes = new ArrayList<>();
     }
 
-    public Queue<Carte> getPacketCartes() {
+    public ArrayList<Carte> getPacketCartes() {
         return packetCartes;
     }
 
@@ -20,25 +20,20 @@ public class PaquetCartes {
     }
 
     public Carte tirerCarte(){
-        return packetCartes.poll();
+        Carte carte = packetCartes.get(0);
+        packetCartes.remove(0);
+        return carte;
     }
     public void add(Carte carte){
         packetCartes.add(carte);
     }
     public void melangerPacket(){
-        List<Carte> list = new ArrayList<>();
-        for (Carte c : packetCartes) {
-            list.add(c);
-        }
-
-        Collections.shuffle(list);
-        packetCartes.clear();
-        for (Carte c : list) {
-            packetCartes.add(c);
-        }
+        Collections.shuffle(packetCartes);
     }
 
     public int size(){
         return packetCartes.size();
     }
+
+    public Carte getCarte(int index){return packetCartes.get(index); }
 }

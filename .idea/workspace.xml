@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="619e39d2-e2b7-40aa-a6a5-f6de914752a1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/Accusation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Appli.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Appli.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Image/Arme/chandelier.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Image/Arme/corde.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Image/Arme/pistolet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Image/Personnage/blanc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Image/Personnage/jaune.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Image/Personnage/rouge.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Image/Piece/cuisine.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Image/Piece/salleAManger.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Image/Piece/salon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Appli.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/Carte.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/Carte.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/CarteArme.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/CarteArme.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/CarteLieu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/CarteLieu.class" afterDir="false" />
@@ -24,17 +15,10 @@
       <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/Meurtrier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/Meurtrier.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/PaquetCartes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/PaquetCartes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cluedo/View/Fenetre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/View/Fenetre.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/View/Plateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/View/Plateau.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Image/Arme/chandelier.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Image/Arme/corde.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Image/Arme/pistolet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Image/Personnage/blanc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Image/Personnage/jaune.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Image/Personnage/rouge.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Image/Piece/cuisine.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Image/Piece/salleAManger.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Image/Piece/salon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/InitCartes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InitCartes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/View/Plateau.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Appli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Appli.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/PaquetCartes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/PaquetCartes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Plateau.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,14 +59,73 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1665045111">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.59" value="1" />
+          <entry key="project.open.time.79" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="24" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="24" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="1557" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="1557" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Appli.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+            <state relative-caret-position="258">
+              <caret line="45" column="42" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1996#1997#0" expanded="true" />
+                <element signature="e#2024#2025#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/Fenetre.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#915#916#0" expanded="true" />
+                <element signature="e#975#976#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/View/Accusation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="109">
+              <caret line="299" column="8" selection-start-line="299" selection-start-column="8" selection-end-line="299" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,16 +133,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/InitCartes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="595">
+              <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -107,7 +157,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/View/Plateau.java" />
+        <option value="$PROJECT_DIR$/src/Model/PaquetCartes.java" />
+        <option value="$PROJECT_DIR$/src/Appli.java" />
         <option value="$PROJECT_DIR$/src/Model/InitCartes.java" />
+        <option value="$PROJECT_DIR$/src/View/Accusation.java" />
       </list>
     </option>
   </component>
@@ -118,9 +172,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="948" />
-    <option name="width" value="980" />
-    <option name="height" value="522" />
+    <option name="x" value="-10" />
+    <option name="width" value="819" />
+    <option name="height" value="860" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -128,48 +182,54 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="CluedoActuel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CluedoActuel" type="462c0819:PsiDirectoryNode" />
+              <item name="cluedo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cluedo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="CluedoActuel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CluedoActuel" type="462c0819:PsiDirectoryNode" />
+              <item name="cluedo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cluedo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="CluedoActuel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CluedoActuel" type="462c0819:PsiDirectoryNode" />
+              <item name="cluedo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cluedo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Image" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="CluedoActuel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CluedoActuel" type="462c0819:PsiDirectoryNode" />
+              <item name="cluedo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cluedo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Image" type="462c0819:PsiDirectoryNode" />
               <item name="Piece" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="CluedoActuel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CluedoActuel" type="462c0819:PsiDirectoryNode" />
+              <item name="cluedo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cluedo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cluedo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cluedo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543249831822" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543318661868" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -231,17 +291,20 @@
       <updated>1543219627867</updated>
       <workItem from="1543219629611" duration="1308000" />
       <workItem from="1543249099275" duration="723000" />
+      <workItem from="1543316040994" duration="2521000" />
+      <workItem from="1543319341572" duration="3842000" />
+      <workItem from="1543338033303" duration="10343000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2031000" />
+    <option name="totallyTimeSpent" value="18737000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1294" height="694" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25364667" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26661265" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -259,7 +322,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32976827" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -279,16 +342,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Appli.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Image/Arme/candlestick.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -310,22 +363,131 @@
     <entry file="file://$PROJECT_DIR$/src/Image/Piece/lounge.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Image/Piece/salon.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Image/Piece/salleAManger.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Image/Piece/salon.png" />
+    <entry file="file://$PROJECT_DIR$/src/Image/Piece/salleAManger.png" />
     <entry file="file://$PROJECT_DIR$/src/Image/Piece/ballroom.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Image/Piece/study.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/InitCartes.java">
+    <entry file="file://$PROJECT_DIR$/src/View/Plateau.java" />
+    <entry file="file://$PROJECT_DIR$/src/Model/Carte.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+          <folding>
+            <element signature="e#336#337#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/CarteArme.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/CarteSuspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/CarteLieu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/InitPlateau.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Cluedo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1662#1663#0" expanded="true" />
+            <element signature="e#1696#1697#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/stage/Stage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="524" selection-start-line="524" selection-end-line="524" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Appli.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="45" column="42" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1996#1997#0" expanded="true" />
+            <element signature="e#2024#2025#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Fenetre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#915#916#0" expanded="true" />
+            <element signature="e#975#976#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/PaquetCartes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#135#136#0" expanded="true" />
+            <element signature="e#183#184#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#725#726#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/InitCartes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Accusation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="299" column="8" selection-start-line="299" selection-start-column="8" selection-end-line="299" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
