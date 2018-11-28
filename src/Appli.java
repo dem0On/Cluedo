@@ -2,6 +2,7 @@ import Model.Cluedo;
 import View.Accusation;
 import View.Fenetre;
 import Model.InitCartes;
+import View.NoteView;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -31,15 +32,18 @@ public class Appli extends Application {
         BorderPane borderPaneRoot = new BorderPane();
         Fenetre fenetre = new Fenetre(cluedo, primaryStage);
         Accusation accusation = new Accusation(cluedo,primaryStage);
+        NoteView noteView = new NoteView(cluedo,primaryStage);
         Scene scene = new Scene(borderPaneRoot,WIDTH,HEIGHT, Color.LIGHTGREY);
         primaryStage.setScene(scene);
         HBox hBox1 = new HBox();
         Button buttoncarte = new Button("Voir mes cartes");
         Button buttonhypothese = new Button("Proposer une hypothèse");
         Button buttonSuivant = new Button("joueur: " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom());
+        Button buttonNote = new Button("notes");
         hBox1.getChildren().add(buttoncarte);
         hBox1.getChildren().add(buttonhypothese);
         hBox1.getChildren().add(buttonSuivant);
+        hBox1.getChildren().add(buttonNote);
 
         buttoncarte.setOnAction(value ->  {
             fenetre.afficher();
@@ -53,6 +57,10 @@ public class Appli extends Application {
         buttonSuivant.setOnAction(value->{
             cluedo.joueurSuivant();
             buttonSuivant.setText("joueur: " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom());
+        });
+
+        buttonNote.setOnAction(value ->  {
+            noteView.afficherNote(cluedo.getListJoueurs().get(cluedo.getJoueurCourant()));
         });
 
 

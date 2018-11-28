@@ -6,10 +6,12 @@ import java.util.List;
 public class Main {
     private String nom;
     private List<Carte> main;
+    private Note note;
     private Pions pion;
 
-    public Main(String nom) {
+    public Main(String nom, Note note) {
         this.nom = nom;
+        this.note = note;
         this.main = new ArrayList<>();
     }
 
@@ -22,6 +24,10 @@ public class Main {
         for (Carte carte : main) {
             System.out.println("- " + carte.print());
         }
+    }
+
+    public Note getNote() {
+        return note;
     }
 
     public void lancerDes(){
