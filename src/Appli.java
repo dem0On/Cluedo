@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
@@ -35,16 +36,23 @@ public class Appli extends Application {
         HBox hBox1 = new HBox();
         Button buttoncarte = new Button("Voir mes cartes");
         Button buttonhypothese = new Button("Proposer une hypothèse");
-        hBox1.getChildren().addAll(buttoncarte);
-        hBox1.getChildren().addAll(buttonhypothese);
+        Button buttonSuivant = new Button("joueur: " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom());
+        hBox1.getChildren().add(buttoncarte);
+        hBox1.getChildren().add(buttonhypothese);
+        hBox1.getChildren().add(buttonSuivant);
 
         buttoncarte.setOnAction(value ->  {
-            fenetre.afficher1();
+            fenetre.afficher();
         });
 
         buttonhypothese.setOnAction(value->{
             accusation.afficherPersonnages();
 
+        });
+
+        buttonSuivant.setOnAction(value->{
+            cluedo.joueurSuivant();
+            buttonSuivant.setText("joueur: " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom());
         });
 
 

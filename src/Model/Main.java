@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
+    private String nom;
     private List<Carte> main;
     private Pions pion;
 
-    public Main() {
+    public Main(String nom) {
+        this.nom = nom;
         this.main = new ArrayList<>();
     }
 
@@ -33,5 +35,9 @@ public class Main {
 
     public List<Carte> getMain() {
         return main;
+    }
+
+    public String getNom() {
+        return nom;
     }
 }

@@ -33,8 +33,8 @@ public class Fenetre extends Parent {
         popup.setScene(scene);
     }
 
-    public void afficher1(){
-        afficherMain(cluedo.getListJoueurs().get(0));
+    public void afficher(){
+        afficherMain(cluedo.getListJoueurs().get(cluedo.getJoueurCourant()));
     }
 
     public void afficherMain(Main main){
