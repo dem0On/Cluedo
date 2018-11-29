@@ -1,47 +1,83 @@
 package View;
 
 import Model.Cluedo;
-import Model.Main;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-
+import javafx.scene.layout.VBox;
 
 public class Fenetre extends Parent {
     private Cluedo cluedo;
     private Canvas canvas;
-    private Stage primaryStage;
-    private Stage popup;
+    private BorderPane borderPaneRoot;
+    private PopUp popUp;
+    private Button buttonhypothese;
+    private Label labelNbJoueur;
 
-    public Fenetre(Cluedo cluedo, Stage primaryStage){
-        popup = new Stage();
+    public Fenetre(Cluedo cluedo, PopUp popUp){
+        this.popUp = popUp;
         this.cluedo = cluedo;
-        this.primaryStage = primaryStage;
-        canvas = new Canvas(1100, 300);
-        initPopup();
+        canvas = new Canvas(500, 300);
+        borderPaneRoot = new BorderPane();
+        VBox vBox = new VBox();
+        initPlateau();
+        initAction();
+        vBox.getChildren().add(borderPaneRoot);
+        vBox.getChildren().add(canvas);
+        this.getChildren().add(vBox);
     }
 
-    private void initPopup(){
-        popup.initModality(Modality.APPLICATION_MODAL);
-        popup.initOwner(primaryStage);
+    private void initPlateau(){
+        //canvas.getGraphicsContext2D().drawImage(new Image("../Image/plateau.jpg"), 0, 0);
+    }
+
+    private void initAction(){
         HBox hBox1 = new HBox();
-        hBox1.getChildren().add(canvas);
-        Scene scene = new Scene(hBox1);
-        popup.setScene(scene);
-    }
+        HBox hBoxJoueur = new HBox();
 
-    public void afficher(){
-        afficherMain(cluedo.getListJoueurs().get(cluedo.getJoueurCourant()));
-    }
+        buttonhypothese = new Button("Proposer une hypothèse");
+        labelNbJoueur = new Label("                                                                               Au tour de " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom()+"                                                                               ");
 
-    public void afficherMain(Main main){
-        canvas.getGraphicsContext2D().restore();
-        for (int i = 0; i < main.getMain().size(); i++) {
-            canvas.getGraphicsContext2D().drawImage(main.getMain().get(i).getImageCarte(), 20+i*160, 50);
-        }
-        popup.show();
+        Button buttoncarte = new Button("Voir mes cartes");
+        Button buttonAccuser = new Button("Accuser");
+        Button buttonSuivant = new Button("Tour fini");
+        Button buttonNote = new Button("Mes notes");
+
+
+        hBox1.getChildren().add(buttoncarte);
+        hBox1.getChildren().add(buttonhypothese);
+        hBoxJoueur.getChildren().add(buttonNote);
+        hBoxJoueur.getChildren().add(buttonSuivant);
+
+
+        buttoncarte.setOnAction(value ->  {
+            popUp.getPopUpMain().afficher();
+        });
+
+        buttonhypothese.setOnAction(value-> {
+            popUp.getAccusation().afficherPersonnages();
+        });
+
+        buttonSuivant.setOnAction(value-> {
+            cluedo.joueurSuivant();
+            labelNbJoueur.setText("                                                                               Au tour de " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom()+"                                                                               ");
+        });
+
+        buttonNote.setOnAction(value ->  {
+            popUp.getNoteView().afficherNote(cluedo.getListJoueurs().get(cluedo.getJoueurCourant()));
+        });
+
+        buttonAccuser.setOnAction(value-> {
+            popUp.getAccusation().afficherPersonnages();
+        });
+
+        borderPaneRoot.setLeft(hBox1);
+        borderPaneRoot.setCenter(labelNbJoueur);
+        borderPaneRoot.setRight(hBoxJoueur);
     }
 }

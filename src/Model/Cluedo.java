@@ -17,17 +17,19 @@ public class Cluedo {
         InitPlateau initPlateau = new InitPlateau();
         plateau = initPlateau.getPlateau();
         initJeu();
-        print();
     }
 
     private Note nouvelleNote(InitCartes initCartes) {
         Note note = new Note();
+        note.addNote(new CheckNote("-------Armes-------"));
         for (int i = 0; i < initCartes.getPaquetArme().size(); i++) {
             note.addNote(new CheckNote(initCartes.getPaquetArme().getCarte(i).nom));
         }
+        note.addNote(new CheckNote("-------Personnage-------"));
         for (int i = 0; i < initCartes.getPaquetSuspect().size(); i++) {
             note.addNote(new CheckNote(initCartes.getPaquetSuspect().getCarte(i).nom));
         }
+        note.addNote(new CheckNote("-------Piéce-------"));
         for (int i = 0; i < initCartes.getPaquetLieu().size(); i++) {
             note.addNote(new CheckNote(initCartes.getPaquetLieu().getCarte(i).nom));
         }
@@ -52,8 +54,8 @@ public class Cluedo {
         paquetCartes.melangerPacket();
 
         for (int i = 0; i < nbJoueur; i++) {
-            Note note = nouvelleNote(initCartes);
-            listJoueurs.add(new Main("Numéro"+i, note));
+            Note note = nouvelleNote(new InitCartes());
+            listJoueurs.add(new Main("Joueur"+i, note));
         }
 
         int taillePaquet = paquetCartes.size();
@@ -65,12 +67,6 @@ public class Cluedo {
     public void joueurSuivant(){
         joueurCourant++;
         joueurCourant = joueurCourant%nbJoueur;
-    }
-
-    private void print(){
-        for (int i = 0; i < nbJoueur; i++) {
-            listJoueurs.get(i).print();
-        }
     }
 
     public List<Main> getListJoueurs() {

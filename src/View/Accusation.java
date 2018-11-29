@@ -31,14 +31,8 @@ public class Accusation extends Parent  {
         this.cluedo = cluedo;
         this.primaryStage = primaryStage;
         canvas = new Canvas(1100, 500);
-        initPopup();
     }
 
-    private void initPopup() {
-
-
-
-    }
     public void afficherPersonnages() {
         Accusation accusation = new Accusation( cluedo, primaryStage);
         BorderPane borderPanePop = new BorderPane();
