@@ -6,7 +6,7 @@ public class CheckNote {
 
     public CheckNote(String nom) {
         this.nom = nom;
-        isCheck = true;
+        isCheck = false;
     }
 
     public void check(){
