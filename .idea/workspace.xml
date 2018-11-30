@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="619e39d2-e2b7-40aa-a6a5-f6de914752a1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="619e39d2-e2b7-40aa-a6a5-f6de914752a1" name="Default" comment="Plateau remis en forme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Appli.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Appli.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/Carte.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/Carte.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/CarteArme.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/CarteArme.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/CarteLieu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/CarteLieu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/CarteSuspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/CarteSuspect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/Cluedo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/Cluedo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Image/plateau.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Image/plateau.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/InitCartes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/InitCartes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/Meurtrier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/Meurtrier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/PaquetCartes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/PaquetCartes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cluedo/View/Fenetre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/View/Fenetre.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Appli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Appli.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Image/plateau.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/Image/plateau.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Cluedo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Cluedo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/InitCartes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InitCartes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Fenetre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Fenetre.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -91,8 +86,10 @@
     <session id="1628064899">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.62" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -102,24 +99,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="281" />
+          <entry key="java" value="417" />
+          <entry key="txt" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="281" />
+          <entry key="JAVA" value="417" />
+          <entry key="PLAIN_TEXT" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="2" />
+          <entry key="java" value="3" />
           <entry key="jpg" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="2" />
+          <entry key="JAVA" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -129,8 +128,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/Accusation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="293" selection-start-line="293" selection-end-line="293" />
+            <state relative-caret-position="-690">
+              <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -141,8 +140,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/InitCartes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+            <state relative-caret-position="74">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -150,8 +149,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Appli.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+            <state relative-caret-position="170">
+              <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -162,8 +161,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/Fenetre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+            <state relative-caret-position="153">
+              <caret line="24" column="64" selection-start-line="24" selection-start-column="64" selection-end-line="24" selection-end-column="64" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Cluedo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2771#2772#0" expanded="true" />
+                <element signature="e#2800#2801#0" expanded="true" />
+                <element signature="e#2829#2830#0" expanded="true" />
+                <element signature="e#2857#2858#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -185,12 +203,12 @@
       <list>
         <option value="$PROJECT_DIR$/src/View/Plateau.java" />
         <option value="$PROJECT_DIR$/src/Model/PaquetCartes.java" />
-        <option value="$PROJECT_DIR$/src/Model/InitCartes.java" />
         <option value="$PROJECT_DIR$/src/Controller/ButtonController.java" />
         <option value="$PROJECT_DIR$/src/View/PopUp.java" />
         <option value="$PROJECT_DIR$/src/Model/CheckNote.java" />
-        <option value="$PROJECT_DIR$/src/Model/Cluedo.java" />
+        <option value="$PROJECT_DIR$/src/Model/InitCartes.java" />
         <option value="$PROJECT_DIR$/src/View/Accusation.java" />
+        <option value="$PROJECT_DIR$/src/Model/Cluedo.java" />
         <option value="$PROJECT_DIR$/src/View/Fenetre.java" />
         <option value="$PROJECT_DIR$/src/Appli.java" />
       </list>
@@ -203,7 +221,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="422" />
+    <option name="x" value="421" />
     <option name="width" value="820" />
     <option name="height" value="860" />
   </component>
@@ -213,7 +231,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -236,19 +253,25 @@
               <item name="CluedoNEW" type="b2602c69:ProjectViewProjectNode" />
               <item name="CluedoNEW" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CluedoNEW" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CluedoNEW" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543570577914" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543570587931" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -324,17 +347,26 @@
       <workItem from="1543319341572" duration="3842000" />
       <workItem from="1543338033303" duration="10343000" />
       <workItem from="1543502854623" duration="4511000" />
+      <workItem from="1543573006274" duration="3600000" />
     </task>
+    <task id="LOCAL-00001" summary="Plateau remis en forme">
+      <created>1543570759656</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1543570759656</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24309000" />
+    <option name="totallyTimeSpent" value="28226000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1294" height="694" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27147487" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27633712" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -343,7 +375,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32798573" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32798573" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -370,6 +402,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Plateau remis en forme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Plateau remis en forme" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Image/Arme/candlestick.jpg">
@@ -494,16 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Cluedo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="52" lean-forward="true" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/PopUp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -519,37 +545,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Image/plateau.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/Accusation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="293" selection-start-line="293" selection-end-line="293" />
+        <state relative-caret-position="-690">
+          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Image/plateau.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/InitCartes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+        <state relative-caret-position="74">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Cluedo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2771#2772#0" expanded="true" />
+            <element signature="e#2800#2801#0" expanded="true" />
+            <element signature="e#2829#2830#0" expanded="true" />
+            <element signature="e#2857#2858#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/Fenetre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        <state relative-caret-position="153">
+          <caret line="24" column="64" selection-start-line="24" selection-start-column="64" selection-end-line="24" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Appli.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        <state relative-caret-position="170">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

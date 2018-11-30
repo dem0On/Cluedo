@@ -13,8 +13,8 @@ public class Appli extends Application {
         primaryStage.setTitle("Cluedo");
         //Group root = new Group();
         Cluedo cluedo = new Cluedo(3);
-        int WIDTH = 1067;
-        int HEIGHT = 1100;
+        int WIDTH = cluedo.getWidth();
+        int HEIGHT = cluedo.getHeigth();
 
         PopUpMain popUpMain = new PopUpMain(cluedo, primaryStage);
         Accusation accusation = new Accusation(cluedo,primaryStage);
@@ -27,7 +27,6 @@ public class Appli extends Application {
         Scene scene = new Scene(fenetre,WIDTH,HEIGHT, Color.LIGHTGREY);
 
         primaryStage.setScene(scene);
-
         primaryStage.show();
     }
 

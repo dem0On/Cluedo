@@ -22,7 +22,7 @@ public class Fenetre extends Parent {
     public Fenetre(Cluedo cluedo, PopUp popUp){
         this.popUp = popUp;
         this.cluedo = cluedo;
-        canvas = new Canvas(1067,1100);
+        canvas = new Canvas(cluedo.getWidth(),cluedo.getHeigth());
         borderPaneRoot = new BorderPane();
         VBox vBox = new VBox();
         initPlateau();
