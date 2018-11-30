@@ -1,6 +1,7 @@
 package View;
 import Model.Cluedo;
 import Model.InitCartes;
+import Model.PaquetCartes;
 import javafx.event.EventHandler;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -24,10 +25,12 @@ public class Accusation extends Parent  {
     private Stage primaryStage;
     private Stage popup;
     private ArrayList<String> Hypothese;
+    private ArrayList<String> Accusation;
 
     public Accusation(Cluedo cluedo, Stage primaryStage){
         popup = new Stage();
         Hypothese = new ArrayList<>();
+        Accusation = new ArrayList<>();
         this.cluedo = cluedo;
         this.primaryStage = primaryStage;
         canvas = new Canvas(1100, 500);
@@ -300,11 +303,22 @@ public class Accusation extends Parent  {
 
 
     }
+
+    public void accuser(){
+        System.out.println("J'ACCUSE!");
+    }
+
+    public void afficherSolution(){
+        System.out.println("Solution du jeu:");
+    }
+
     public ArrayList<String> getHypothese() {
         return Hypothese;
     }
 
-
+    public ArrayList<String> getAccusation() {
+        return Accusation;
+    }
 
     public void afficherArmes(InitCartes pers) {
         canvas.getGraphicsContext2D().restore();

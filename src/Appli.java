@@ -38,12 +38,16 @@ public class Appli extends Application {
         HBox hBox1 = new HBox();
         Button buttoncarte = new Button("Voir mes cartes");
         Button buttonhypothese = new Button("Proposer une hypothèse");
+        Button buttonaccusation = new Button("Accusation");
         Button buttonSuivant = new Button("joueur: " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom());
         Button buttonNote = new Button("notes");
+        Button buttonSolution = new Button("solution");
         hBox1.getChildren().add(buttoncarte);
         hBox1.getChildren().add(buttonhypothese);
+        hBox1.getChildren().add(buttonaccusation);
         hBox1.getChildren().add(buttonSuivant);
         hBox1.getChildren().add(buttonNote);
+        hBox1.getChildren().add(buttonSolution);
 
         buttoncarte.setOnAction(value ->  {
             fenetre.afficher();
@@ -63,7 +67,13 @@ public class Appli extends Application {
             noteView.afficherNote(cluedo.getListJoueurs().get(cluedo.getJoueurCourant()));
         });
 
+        buttonaccusation.setOnAction(value ->  {
+            accusation.accuser();
+        });
 
+        buttonSolution.setOnAction(value ->  {
+            accusation.afficherSolution();
+        });
 
         borderPaneRoot.setStyle("-fx-background-image: url('Image/plateau.jpg');");
 
