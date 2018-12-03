@@ -9,6 +9,8 @@ public class Cluedo {
     private int joueurCourant;
     private Meurtrier meutrier;
     private TypeCase plateau[][];
+    final private int Width = 800;
+    final private int Heigth = 1000;
 
     public Cluedo(int nbJoueur) {
         this.nbJoueur = nbJoueur;
@@ -75,5 +77,13 @@ public class Cluedo {
 
     public int getJoueurCourant() {
         return joueurCourant;
+    }
+
+    public int getHeigth() {
+        return Heigth;
+    }
+
+    public int getWidth() {
+        return Width;
     }
 }

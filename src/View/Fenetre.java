@@ -22,7 +22,7 @@ public class Fenetre extends Parent {
     public Fenetre(Cluedo cluedo, PopUp popUp){
         this.popUp = popUp;
         this.cluedo = cluedo;
-        canvas = new Canvas(500, 300);
+        canvas = new Canvas(cluedo.getWidth(),cluedo.getHeigth());
         borderPaneRoot = new BorderPane();
         VBox vBox = new VBox();
         initPlateau();
@@ -33,7 +33,8 @@ public class Fenetre extends Parent {
     }
 
     private void initPlateau(){
-        //canvas.getGraphicsContext2D().drawImage(new Image("../Image/plateau.jpg"), 0, 0);
+
+        canvas.getGraphicsContext2D().drawImage(new Image("Image/plateau.jpg"), 0, 0);
     }
 
     private void initAction(){
@@ -41,7 +42,7 @@ public class Fenetre extends Parent {
         HBox hBoxJoueur = new HBox();
 
         buttonhypothese = new Button("Proposer une hypothèse");
-        labelNbJoueur = new Label("                                                                               Au tour de " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom()+"                                                                               ");
+        labelNbJoueur = new Label("Au tour de " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom());
 
         Button buttoncarte = new Button("Voir mes cartes");
         Button buttonAccuser = new Button("Accuser");
@@ -65,7 +66,7 @@ public class Fenetre extends Parent {
 
         buttonSuivant.setOnAction(value-> {
             cluedo.joueurSuivant();
-            labelNbJoueur.setText("                                                                               Au tour de " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom()+"                                                                               ");
+            labelNbJoueur.setText("Au tour de " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom());
         });
 
         buttonNote.setOnAction(value ->  {
