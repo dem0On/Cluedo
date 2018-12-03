@@ -1,5 +1,7 @@
 package Model;
 
+import javafx.scene.paint.Color;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,13 +14,13 @@ public class Cluedo {
     final private int Width = 800;
     final private int Heigth = 1000;
 
-    public Cluedo(int nbJoueur) {
-        this.nbJoueur = nbJoueur;
+    public Cluedo(Color[] tabJoueur) {
+        this.nbJoueur = tabJoueur.length;
         joueurCourant = 0;
         listJoueurs = new ArrayList<>();
         InitPlateau initPlateau = new InitPlateau();
         plateau = initPlateau.getPlateau();
-        initJeu();
+        initJeu(tabJoueur);
     }
 
     private Note nouvelleNote(InitCartes initCartes) {
@@ -38,7 +40,7 @@ public class Cluedo {
         return note;
     }
 
-    private void initJeu(){
+    private void initJeu(Color[] tabJoueur){
         InitCartes initCartes = new InitCartes();
         PaquetCartes paquetLieu = initCartes.getPaquetLieu();
         PaquetCartes paquetArme = initCartes.getPaquetArme();
@@ -55,9 +57,9 @@ public class Cluedo {
         paquetCartes.add(paquetMeutrtrier);
         paquetCartes.melangerPacket();
 
-        for (int i = 0; i < nbJoueur; i++) {
+        for (int i = 0; i < tabJoueur.length; i++) {
             Note note = nouvelleNote(new InitCartes());
-            listJoueurs.add(new Main("Joueur"+i, note));
+            listJoueurs.add(new Main("Joueur"+i, note, new Pions(tabJoueur[i])));
         }
 
         int taillePaquet = paquetCartes.size();
@@ -86,4 +88,6 @@ public class Cluedo {
     public int getWidth() {
         return Width;
     }
+
+    public TypeCase[][] getPlateau() { return plateau; }
 }

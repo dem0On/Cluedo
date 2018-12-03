@@ -26,7 +26,7 @@ public class InitPlateau {
                 }
 
                 // Piece Salle de Bain
-                else if( (x>=17 && x<=24) && (y>=0 && y<=5) ){
+                else if( (x>=17 && x<24) && (y>=0 && y<=5) ){
                     if(x==17 && y==5 ) plateau[x][y] = TypeCase.PorteVerticale; // Porte
                     else plateau[x][y] = TypeCase.SalleDeBain;
                 }
@@ -45,7 +45,7 @@ public class InitPlateau {
                 }
 
                 // Piece Salle a Manger
-                else if( (x>=16 && x<=24) && (y>=9 && y<=15) ){
+                else if( (x>=16 && x<24) && (y>=9 && y<=15) ){
                     if(x==16 && y==12 ) plateau[x][y] = TypeCase.PorteHorizontal; // Porte
                     else if(x==13 && y==9) plateau[x][y] = TypeCase.PorteVerticale; // Porte
                     else if(y==15 && x>=16 && x<=18) plateau[x][y] = TypeCase.Couloir; // Couloir
@@ -53,7 +53,7 @@ public class InitPlateau {
                 }
 
                 // Piece Cuisine
-                else if( (x>=18 && x<=24) && (y>=18 && y<=24) ){
+                else if( (x>=18 && x<24) && (y>=18 && y<=24) ){
                     if(x==18 && y==19 ) plateau[x][y] = TypeCase.PorteVerticale; // Porte
                     else plateau[x][y] = TypeCase.Cuisine;
                 }
@@ -96,13 +96,38 @@ public class InitPlateau {
                 }
 
                 //Zone Vide-Droite
-                else if( x==24 && (y==6 || y==8 || y==16 ) ){
+                else if( x==23 && (y==6 || y==8 || y==16 ) ){
                     plateau[x][y] = null;
                 }
 
                 //Zone Vide-Haut
                 else if( (x==8 || x==15)  && y==0){
                     plateau[x][y] = null;
+                }
+
+                //Placement Départ joueur
+                else if( x==16 && y==0 ){
+                    plateau[x][y] = TypeCase.DepartRouge;
+                }
+
+                else if( x==23 && y==7 ){
+                    plateau[x][y] = TypeCase.DepartJaune;
+                }
+
+                else if( x==14 && y==24 ){
+                    plateau[x][y] = TypeCase.DepartBlanc;
+                }
+
+                else if( x==9 && y==24 ){
+                    plateau[x][y] = TypeCase.DepartVert;
+                }
+
+                else if( x==0 && y==18 ){
+                    plateau[x][y] = TypeCase.DepartBleu;
+                }
+
+                else if( x==0 && y==5 ){
+                    plateau[x][y] = TypeCase.DepartViolet;
                 }
 
                 else{

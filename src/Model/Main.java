@@ -9,9 +9,10 @@ public class Main {
     private Note note;
     private Pions pion;
 
-    public Main(String nom, Note note) {
+    public Main(String nom, Note note, Pions pion) {
         this.nom = nom;
         this.note = note;
+        this.pion = pion;
         this.main = new ArrayList<>();
     }
 
@@ -45,5 +46,9 @@ public class Main {
 
     public String getNom() {
         return nom;
+    }
+
+    public Pions getPion() {
+        return pion;
     }
 }

@@ -13,5 +13,11 @@ public enum TypeCase {
     SalleDanse,
     Centre,
     PorteVerticale,
-    PorteHorizontal;
+    PorteHorizontal,
+    DepartRouge,
+    DepartJaune,
+    DepartBlanc,
+    DepartVert,
+    DepartBleu,
+    DepartViolet
 }
