@@ -11,8 +11,8 @@ public class Appli extends Application {
     @Override
     public void start(Stage primaryStage){
         primaryStage.setTitle("Cluedo");
-        //Group root = new Group();
-        Cluedo cluedo = new Cluedo(3);
+        Color[] tab = {Color.RED, Color.GREEN, Color.BLUE};
+        Cluedo cluedo = new Cluedo(tab);
         int WIDTH = cluedo.getWidth();
         int HEIGHT = cluedo.getHeigth();
 
