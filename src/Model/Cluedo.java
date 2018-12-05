@@ -66,11 +66,13 @@ public class Cluedo {
         for (int i = 0; i < taillePaquet; i++) {
             listJoueurs.get(i%nbJoueur).ajouter(paquetCartes.tirerCarte());
         }
+        listJoueurs.get(joueurCourant).lancerDes();
     }
 
     public void joueurSuivant(){
         joueurCourant++;
         joueurCourant = joueurCourant%nbJoueur;
+        listJoueurs.get(joueurCourant).lancerDes();
     }
 
     public List<Main> getListJoueurs() {

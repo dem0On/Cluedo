@@ -22,28 +22,35 @@ public class KeyController implements EventHandler<KeyEvent> {
         fenetre.getCanvas().getGraphicsContext2D().setFill(cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getCouleur());
         int x = (int) cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().getX();
         int y = (int) cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().getY();
-        TypeCase caseJoueur = cluedo.getPlateau()[(int)x][(int)y];
-        if(event.getCode() == KeyCode.Z) {
-            if(isDeplacementHaut(x, y))
-                cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(0, -1);
-            else System.out.println("bloqué");
+        if(!cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().isDeplacement()) {
+            if (event.getCode() == KeyCode.Z) {
+                if (isDeplacementHaut(x, y)) {
+                    cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(0, -1);
+                    cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().deplacement();
+                } else System.out.println("bloqué");
+            } else if (event.getCode() == KeyCode.S) {
+                if (isDeplacementBas(x, y)) {
+                    cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(0, 1);
+                    cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().deplacement();
+                } else System.out.println("bloqué");
+            } else if (event.getCode() == KeyCode.Q) {
+                if (isDeplacementGauche(x, y)) {
+                    cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(-1, 0);
+                    cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().deplacement();
+                } else System.out.println("bloqué");
+            } else if (event.getCode() == KeyCode.D) {
+                if (isDeplacementDroite(x, y)) {
+                    cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(1, 0);
+                    cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().deplacement();
+                } else System.out.println("bloqué");
+            }
+            x = (int) cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().getX();
+            y = (int) cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().getY();
+            if(cluedo.getPlateau()[x][y] != TypeCase.Couloir) cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().setNbfDeplacement(0);
+            fenetre.actualiserPlateau();
+            fenetre.actualiserInterface();
         }
-        else if(event.getCode() == KeyCode.S) {
-            if(isDeplacementBas(x, y))
-                cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(0, 1);
-            else System.out.println("bloqué");
-        }
-        else if(event.getCode() == KeyCode.Q) {
-            if(isDeplacementGauche(x, y))
-                cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(-1, 0);
-            else System.out.println("bloqué");
-        }
-        else if(event.getCode() == KeyCode.D) {
-            if(isDeplacementDroite(x, y))
-                cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(1, 0);
-            else System.out.println("bloqué");
-        }
-        fenetre.actualiser();
+        else System.out.println("il y a plus de déplacement");
     }
 
     private boolean isDeplacementHaut(int x, int y){

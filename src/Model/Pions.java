@@ -29,6 +29,10 @@ public class Pions {
         this.nbfDeplacement = nbfDeplacement;
     }
 
+    public int getNbfDeplacement() {
+        return nbfDeplacement;
+    }
+
     public void deplacement(){
         nbfDeplacement--;
     }

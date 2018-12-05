@@ -25,14 +25,14 @@ public class Fenetre extends Parent {
     private Button buttonhypothese;
     private Label labelNbJoueur;
 
-    public Fenetre(Cluedo cluedo, PopUp popUp){
+    public Fenetre(Cluedo cluedo, PopUp popUp) {
         KeyController keyController = new KeyController(cluedo, this);
         this.popUp = popUp;
         this.cluedo = cluedo;
-        canvas = new Canvas(cluedo.getWidth(),cluedo.getHeigth());
+        canvas = new Canvas(cluedo.getWidth(), cluedo.getHeigth());
         borderPaneRoot = new BorderPane();
         VBox vBox = new VBox();
-        actualiser();
+        actualiserPlateau();
         initAction();
         vBox.getChildren().add(borderPaneRoot);
         vBox.getChildren().add(canvas);
@@ -40,12 +40,12 @@ public class Fenetre extends Parent {
         this.getChildren().add(vBox);
     }
 
-    private void initAction(){
+    private void initAction() {
         HBox hBox1 = new HBox();
         HBox hBoxJoueur = new HBox();
 
         buttonhypothese = new Button("Proposer une hypothèse");
-        labelNbJoueur = new Label("Au tour de " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom());
+        labelNbJoueur = new Label("Au tour de " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom() + "  Nombre de déplacement restant : " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getNbfDeplacement());
 
         Button buttoncarte = new Button("Voir mes cartes");
         Button buttonAccuser = new Button("Accuser");
@@ -59,24 +59,24 @@ public class Fenetre extends Parent {
         hBoxJoueur.getChildren().add(buttonSuivant);
 
 
-        buttoncarte.setOnAction(value ->  {
+        buttoncarte.setOnAction(value -> {
             popUp.getPopUpMain().afficher();
         });
 
-        buttonhypothese.setOnAction(value-> {
+        buttonhypothese.setOnAction(value -> {
             popUp.getAccusation().afficherPersonnages();
         });
 
-        buttonSuivant.setOnAction(value-> {
+        buttonSuivant.setOnAction(value -> {
             cluedo.joueurSuivant();
-            labelNbJoueur.setText("Au tour de " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom());
+            actualiserInterface();
         });
 
-        buttonNote.setOnAction(value ->  {
+        buttonNote.setOnAction(value -> {
             popUp.getNoteView().afficherNote(cluedo.getListJoueurs().get(cluedo.getJoueurCourant()));
         });
 
-        buttonAccuser.setOnAction(value-> {
+        buttonAccuser.setOnAction(value -> {
             popUp.getAccusation().afficherPersonnages();
         });
 
@@ -89,14 +89,18 @@ public class Fenetre extends Parent {
         return canvas;
     }
 
-    public void actualiser() {
+    public void actualiserPlateau() {
         //x == 50 et y==40  et case 30 carre donc pour i et j on doit placer pion en  i*30+56 j*30+
         canvas.getGraphicsContext2D().restore();
         canvas.getGraphicsContext2D().drawImage(new Image("Image/plateau.jpg"), 0, 0);
         for (int i = 0; i < cluedo.getListJoueurs().size(); i++) {
             Pions pions = cluedo.getListJoueurs().get(i).getPion();
             canvas.getGraphicsContext2D().setFill(pions.getCouleur());
-            canvas.getGraphicsContext2D().fillOval(pions.getPoint().getX()*30+56, pions.getPoint().getY()*30+46, 15, 15);
+            canvas.getGraphicsContext2D().fillOval(pions.getPoint().getX() * 30 + 56, pions.getPoint().getY() * 30 + 46, 15, 15);
         }
+    }
+
+    public void actualiserInterface() {
+        labelNbJoueur.setText("Au tour de " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom() + "  Nombre de déplacement restant : " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getNbfDeplacement());
     }
 }
