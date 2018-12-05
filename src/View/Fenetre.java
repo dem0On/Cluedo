@@ -90,7 +90,8 @@ public class Fenetre extends Parent {
     }
 
     public void actualiser() {
-        //x == 50 et y==40  et case 30 carre donc pour i et j on doit placer pion en  i*30+56 j*30+46
+        //x == 50 et y==40  et case 30 carre donc pour i et j on doit placer pion en  i*30+56 j*30+
+        canvas.getGraphicsContext2D().restore();
         canvas.getGraphicsContext2D().drawImage(new Image("Image/plateau.jpg"), 0, 0);
         for (int i = 0; i < cluedo.getListJoueurs().size(); i++) {
             Pions pions = cluedo.getListJoueurs().get(i).getPion();

@@ -2,13 +2,13 @@ package Controller;
 
 
 import Model.Cluedo;
+import Model.TypeCase;
 import View.Fenetre;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
 public class KeyController implements EventHandler<KeyEvent> {
-    // pour remove on utilisera canvas.getContectGraphic2D().clearRect(double x, double y, double w, double h)
     private Cluedo cluedo;
     private Fenetre fenetre;
 
@@ -20,22 +20,65 @@ public class KeyController implements EventHandler<KeyEvent> {
     @Override
     public void handle(KeyEvent event) {
         fenetre.getCanvas().getGraphicsContext2D().setFill(cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getCouleur());
+        int x = (int) cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().getX();
+        int y = (int) cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().getY();
+        TypeCase caseJoueur = cluedo.getPlateau()[(int)x][(int)y];
         if(event.getCode() == KeyCode.Z) {
-            System.out.println("fleche du haut");
-            cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(0, -1);
+            if(isDeplacementHaut(x, y))
+                cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(0, -1);
+            else System.out.println("bloqué");
         }
         else if(event.getCode() == KeyCode.S) {
-            System.out.println("fleche du bas");
-            cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(0, 1);
+            if(isDeplacementBas(x, y))
+                cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(0, 1);
+            else System.out.println("bloqué");
         }
         else if(event.getCode() == KeyCode.Q) {
-            System.out.println("fleche de gauche");
-            cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(-1, 0);
+            if(isDeplacementGauche(x, y))
+                cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(-1, 0);
+            else System.out.println("bloqué");
         }
         else if(event.getCode() == KeyCode.D) {
-            System.out.println("fleche de droite");
-            cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(1, 0);
+            if(isDeplacementDroite(x, y))
+                cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(1, 0);
+            else System.out.println("bloqué");
         }
         fenetre.actualiser();
+    }
+
+    private boolean isDeplacementHaut(int x, int y){
+        if(y<0) return false;
+        if(cluedo.getPlateau()[x][y-1] != TypeCase.PorteVerticale) {
+            if(cluedo.getPlateau()[x][y-1] != TypeCase.Couloir) return false;
+        }
+        if(cluedo.getPlateau()[x][y-1] == TypeCase.PorteVerticale) cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(0, -1);
+        return true;
+    }
+
+    private boolean isDeplacementBas(int x, int y){
+        if(y>25) return false;
+        if(cluedo.getPlateau()[x][y+1] != TypeCase.PorteVerticale) {
+            if(cluedo.getPlateau()[x][y+1] != TypeCase.Couloir) return false;
+        }
+        if(cluedo.getPlateau()[x][y+1] == TypeCase.PorteVerticale) cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(0, 1);
+        return true;
+    }
+
+    private boolean isDeplacementGauche(int x, int y){
+        if(x<0) return false;
+        if(cluedo.getPlateau()[x-1][y] != TypeCase.PorteHorizontal) {
+            if(cluedo.getPlateau()[x-1][y] != TypeCase.Couloir) return false;
+        }
+        if(cluedo.getPlateau()[x-1][y] == TypeCase.PorteHorizontal) cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(-1, 0);
+        return true;
+    }
+
+    private boolean isDeplacementDroite(int x, int y){
+        if(x>24) return false;
+        if(cluedo.getPlateau()[x+1][y] != TypeCase.PorteHorizontal){
+            if(cluedo.getPlateau()[x+1][y] != TypeCase.Couloir) return false;
+        }
+        if(cluedo.getPlateau()[x+1][y] == TypeCase.PorteHorizontal) cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(1, 0);
+        return true;
     }
 }

@@ -47,7 +47,7 @@ public class InitPlateau {
                 // Piece Salle a Manger
                 else if( (x>=16 && x<24) && (y>=9 && y<=15) ){
                     if(x==16 && y==12 ) plateau[x][y] = TypeCase.PorteHorizontal; // Porte
-                    else if(x==13 && y==9) plateau[x][y] = TypeCase.PorteVerticale; // Porte
+                    else if(x==17 && y==9) plateau[x][y] = TypeCase.PorteVerticale; // Porte
                     else if(y==15 && x>=16 && x<=18) plateau[x][y] = TypeCase.Couloir; // Couloir
                     else plateau[x][y] = TypeCase.SalleManger;
                 }
@@ -69,9 +69,9 @@ public class InitPlateau {
                 }
 
                 // Piece Conservatoire
-                else if( (x>=0 && x<=5) && (y>=20 && y<=24) ){
-                    if(x==4 && y==20) plateau[x][y] = TypeCase.PorteHorizontal; // Porte
-                    else if(x==5 && y==20) plateau[x][y] = TypeCase.Couloir; // Couloir
+                else if( (x>=0 && x<=5) && (y>=19 && y<=24) ){
+                    if(x==4 && y==19) plateau[x][y] = TypeCase.PorteHorizontal; // Porte
+                    else if(x==5 && y==19) plateau[x][y] = TypeCase.Couloir; // Couloir
                     else plateau[x][y] = TypeCase.Conservatoire;
                 }
 
