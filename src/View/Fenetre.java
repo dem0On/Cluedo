@@ -69,11 +69,11 @@ public class Fenetre extends Parent {
         });
 
         buttonhypothese.setOnAction(value -> {
-            popUp.getAccusation().afficherPersonnages();
+            popUp.getHypothese().afficher();
         });
 
         buttonAccusation.setOnAction(value->{
-            popUp.getAccusation().afficherPersonnages();
+            popUp.getAccusation().afficher();
         });
 
         buttonSuivant.setOnAction(value -> {
