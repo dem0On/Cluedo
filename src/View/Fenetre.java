@@ -23,6 +23,7 @@ public class Fenetre extends Parent {
     private BorderPane borderPaneRoot;
     private PopUp popUp;
     private Button buttonhypothese;
+    private Button buttonAccusation;
     private Label labelNbJoueur;
 
     public Fenetre(Cluedo cluedo, PopUp popUp) {
@@ -46,6 +47,7 @@ public class Fenetre extends Parent {
         HBox hBoxJoueur = new HBox();
 
         buttonhypothese = new Button("Proposer une hypothèse");
+        buttonAccusation = new Button("Accusation !");
         buttonhypothese.setVisible(false);
         labelNbJoueur = new Label("Au tour de " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom() + "  Nombre de déplacement restant : " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getNbfDeplacement());
 
@@ -57,6 +59,7 @@ public class Fenetre extends Parent {
 
         hBox1.getChildren().add(buttoncarte);
         hBox1.getChildren().add(buttonhypothese);
+        hBox1.getChildren().add(buttonAccusation);
         hBoxJoueur.getChildren().add(buttonNote);
         hBoxJoueur.getChildren().add(buttonSuivant);
 
@@ -66,6 +69,10 @@ public class Fenetre extends Parent {
         });
 
         buttonhypothese.setOnAction(value -> {
+            popUp.getAccusation().afficherPersonnages();
+        });
+
+        buttonAccusation.setOnAction(value->{
             popUp.getAccusation().afficherPersonnages();
         });
 

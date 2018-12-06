@@ -11,7 +11,7 @@ public class Cluedo {
     private int joueurCourant;
     private Meurtrier meutrier;
     private TypeCase plateau[][];
-    final private int Width = 800;
+    final private int Width = 950;
     final private int Heigth = 1000;
 
     public Cluedo(Color[] tabJoueur) {

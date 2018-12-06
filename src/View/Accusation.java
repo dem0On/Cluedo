@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -20,7 +21,6 @@ import java.util.ArrayList;
 
 public class Accusation extends Parent  {
     private Cluedo cluedo;
-    private InitCartes initCarte;
     private Canvas canvas;
     private Stage primaryStage;
     private Stage popup;
@@ -36,7 +36,7 @@ public class Accusation extends Parent  {
         canvas = new Canvas(1100, 500);
     }
 
-    public void afficherPersonnages() {
+    void afficherPersonnages() {
         Accusation accusation = new Accusation( cluedo, primaryStage);
         BorderPane borderPanePop = new BorderPane();
         GridPane gridPane = new GridPane ();
@@ -117,7 +117,7 @@ public class Accusation extends Parent  {
 
     }
 
-    public void afficherArme(){
+    private void afficherArme(){
         Accusation accusation = new Accusation(cluedo,primaryStage);
         BorderPane borderPanePopARME = new BorderPane();
         GridPane gridPaneARME = new GridPane ();
@@ -196,7 +196,7 @@ public class Accusation extends Parent  {
 
     }
 
-    public void afficherPieces(){
+    private void afficherPieces(){
         Accusation accusation = new Accusation(cluedo,primaryStage);
 
         BorderPane borderPanePopPiece = new BorderPane();
@@ -248,45 +248,56 @@ public class Accusation extends Parent  {
         buttonsalle_a_manger.setOnAction(value ->  {
             System.out.println("salle a manger");
             Hypothese.add("salle_a_manger");
+            accusation.Comparaison();
             popup.close();
         });
         buttoncuisine.setOnAction(value ->  {
             System.out.println("Cuisine");
             Hypothese.add("Cuisine");
+            accusation.Comparaison();
+            popup.close();
+
         });
         buttonsalon.setOnAction(value ->  {
             System.out.println("Salon");
             Hypothese.add("Salon");
+            accusation.Comparaison();
             popup.close();
         });
         buttonSalle_de_Bal.setOnAction(value ->  {
             System.out.println("Salle de Bal");
             Hypothese.add("Salle_de_Bal");
+            accusation.Comparaison();
             popup.close();
         });
         buttonSalle_de_Billard.setOnAction(value ->  {
             System.out.println("Salle de Billard");
             Hypothese.add("Salle_de_Billard");
+            accusation.Comparaison();
             popup.close();
         });
         buttonConservatoire.setOnAction(value ->  {
             System.out.println("Conservatoire");
             Hypothese.add("Conservatoire");
+            accusation.Comparaison();
             popup.close();
         });
         buttonHall.setOnAction(value ->  {
             System.out.println("Hall");
             Hypothese.add("Hall");
+            accusation.Comparaison();
             popup.close();
         });
         buttonLibrairie.setOnAction(value ->  {
             System.out.println("Librairie");
             Hypothese.add("Librairie");
+            accusation.Comparaison();
             popup.close();
         });
         buttonBureau.setOnAction(value ->  {
             System.out.println("Bureau");
             Hypothese.add("Bureau");
+            accusation.Comparaison();
             popup.close();
         });
 
@@ -295,6 +306,26 @@ public class Accusation extends Parent  {
         popup.setScene(scenePiece);
         popup.show();
 
+
+    }
+
+    private void Comparaison(){
+        Accusation accusation = new Accusation(cluedo,primaryStage);
+        Label labelJoueur = new Label("Votre Accusation : ");
+        Label labelMain;
+        BorderPane borderPanePopPiece = new BorderPane();
+        popup.initModality(Modality.APPLICATION_MODAL);
+        popup.initOwner(primaryStage);
+
+            System.out.println(accusation.getAccusation());
+
+
+        VBox vBox3 = new VBox();
+        vBox3.getChildren().add(canvas);
+
+        Scene scenePiece = new Scene(borderPanePopPiece);
+        popup.setScene(scenePiece);
+        popup.show();
 
     }
 
@@ -314,19 +345,5 @@ public class Accusation extends Parent  {
         return Accusation;
     }
 
-    public void afficherArmes(InitCartes pers) {
-        canvas.getGraphicsContext2D().restore();
-        for (int i = 0; i < pers.getPaquetArme().size(); i++) {
-            canvas.getGraphicsContext2D().drawImage(pers.getPaquetArme().getCarte(i).getImageCarte(), 20 + i * 160, 50);
-        }
-        popup.show();
-    }
-    public void afficherPieces(InitCartes pers) {
-        canvas.getGraphicsContext2D().restore();
-        for (int i = 0; i < pers.getPaquetLieu().size(); i++) {
-            canvas.getGraphicsContext2D().drawImage(pers.getPaquetLieu().getCarte(i).getImageCarte(), 20 + i * 160, 50);
-        }
-        popup.show();
-    }
 
 }
