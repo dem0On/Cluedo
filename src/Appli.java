@@ -19,8 +19,9 @@ public class Appli extends Application {
         PopUpMain popUpMain = new PopUpMain(cluedo, primaryStage);
         Accusation accusation = new Accusation(cluedo,primaryStage);
         NoteView noteView = new NoteView(cluedo,primaryStage);
+        DebutTour debutTour = new DebutTour(cluedo, primaryStage);
 
-        PopUp popUp = new PopUp(popUpMain, accusation, noteView);
+        PopUp popUp = new PopUp(popUpMain, accusation, noteView, debutTour);
 
         Fenetre fenetre = new Fenetre(cluedo, popUp);
 

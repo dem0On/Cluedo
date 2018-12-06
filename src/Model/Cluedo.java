@@ -72,6 +72,9 @@ public class Cluedo {
     public void joueurSuivant(){
         joueurCourant++;
         joueurCourant = joueurCourant%nbJoueur;
+    }
+
+    public void lancerDes(){
         listJoueurs.get(joueurCourant).lancerDes();
     }
 

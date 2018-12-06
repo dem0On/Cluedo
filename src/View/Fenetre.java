@@ -29,6 +29,7 @@ public class Fenetre extends Parent {
         KeyController keyController = new KeyController(cluedo, this);
         this.popUp = popUp;
         this.cluedo = cluedo;
+        this.popUp.getDebutTour().setFenetre(this);
         canvas = new Canvas(cluedo.getWidth(), cluedo.getHeigth());
         borderPaneRoot = new BorderPane();
         VBox vBox = new VBox();
@@ -45,6 +46,7 @@ public class Fenetre extends Parent {
         HBox hBoxJoueur = new HBox();
 
         buttonhypothese = new Button("Proposer une hypothèse");
+        buttonhypothese.setVisible(false);
         labelNbJoueur = new Label("Au tour de " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom() + "  Nombre de déplacement restant : " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getNbfDeplacement());
 
         Button buttoncarte = new Button("Voir mes cartes");
@@ -69,6 +71,15 @@ public class Fenetre extends Parent {
 
         buttonSuivant.setOnAction(value -> {
             cluedo.joueurSuivant();
+            int x = (int)cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().getX();
+            int y = (int)cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().getY();
+            buttonhypothese.setVisible(false);
+            if(validerDebutTour(x,y) == null){
+                cluedo.lancerDes();
+            }
+            else{
+                popUp.getDebutTour().afficherPopUp();
+            }
             actualiserInterface();
         });
 
@@ -102,5 +113,25 @@ public class Fenetre extends Parent {
 
     public void actualiserInterface() {
         labelNbJoueur.setText("Au tour de " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom() + "  Nombre de déplacement restant : " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getNbfDeplacement());
+    }
+
+    public void mettreHypothese() {
+        buttonhypothese.setVisible(true);
+    }
+
+    public TypeCase validerDebutTour(int x, int y){
+        if(cluedo.getPlateau()[x][y] == TypeCase.Bureau){
+            return TypeCase.Bureau;
+        }
+        else if(cluedo.getPlateau()[x][y] == TypeCase.SalleDeBain){
+            return TypeCase.SalleDeBain;
+        }
+        else if(cluedo.getPlateau()[x][y] == TypeCase.Cuisine){
+            return TypeCase.Cuisine;
+        }
+        else if(cluedo.getPlateau()[x][y] == TypeCase.Conservatoire){
+            return TypeCase.Conservatoire;
+        }
+        return null;
     }
 }

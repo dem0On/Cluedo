@@ -46,7 +46,10 @@ public class KeyController implements EventHandler<KeyEvent> {
             }
             x = (int) cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().getX();
             y = (int) cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().getY();
-            if(cluedo.getPlateau()[x][y] != TypeCase.Couloir) cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().setNbfDeplacement(0);
+            if(cluedo.getPlateau()[x][y] != TypeCase.Couloir) {
+                cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().setNbfDeplacement(0);
+                fenetre.mettreHypothese();
+            }
             fenetre.actualiserPlateau();
             fenetre.actualiserInterface();
         }
