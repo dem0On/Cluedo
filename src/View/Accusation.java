@@ -1,6 +1,7 @@
 package View;
 import Model.Cluedo;
 import javafx.scene.Scene;
+import Model.Cluedo;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -17,17 +18,17 @@ public class Accusation {
     private Stage primaryStage;
     private Stage popup;
     private GridPane gridPane;
-    private ArrayList<String> accusation;
+    private BorderPane borderPane;
+    private ArrayList<Image> accusation;
 
     public Accusation(Cluedo cluedo, Stage primaryStage){
         popup = new Stage();
         accusation = new ArrayList<>();
         gridPane = new GridPane ();
+        borderPane = new BorderPane();
         this.cluedo = cluedo;
         this.primaryStage = primaryStage;
-
-        BorderPane borderPane = new BorderPane();
-        borderPane.setTop(gridPane);
+        borderPane.setCenter(gridPane);
         Scene scene = new Scene(borderPane);
 
         popup.initModality(Modality.APPLICATION_MODAL);
@@ -70,40 +71,48 @@ public class Accusation {
 
         buttonBlanc.setOnAction(value ->  {
             System.out.println("Blanc");
-            accusation.add("Blanc");
+            accusation.add(new Image("Image/Personnage/blanc.jpg"));
             afficherArme();
+            gridPane.getChildren().removeAll(buttonBlanc,buttonBleu,buttonJaune,buttonRouge,buttonVert,buttonViolet);
+
         });
 
         buttonBleu.setOnAction(value ->  {
             System.out.println("Bleu");
-            accusation.add("Bleu");
+            accusation.add(new Image("Image/Personnage/bleu.jpg"));
             afficherArme();
         });
 
         buttonJaune.setOnAction(value ->  {
             System.out.println("Jaune");
-            accusation.add("Jaune");
+            accusation.add(new Image("Image/Personnage/jaune.jpg"));
             afficherArme();
+            gridPane.getChildren().removeAll(buttonBlanc,buttonBleu,buttonJaune,buttonRouge,buttonVert,buttonViolet);
 
         });
 
         buttonRouge.setOnAction(value ->  {
             System.out.println("Rouge");
-            accusation.add("Rouge");
+            accusation.add(new Image("Image/Personnage/rouge.jpg"));
             afficherArme();
+            gridPane.getChildren().removeAll(buttonBlanc,buttonBleu,buttonJaune,buttonRouge,buttonVert,buttonViolet);
 
         });
 
         buttonVert.setOnAction(value ->  {
             System.out.println("Vert");
-            accusation.add("Vert");
+            accusation.add(new Image("Image/Personnage/vert.jpg"));
             afficherArme();
+            gridPane.getChildren().removeAll(buttonBlanc,buttonBleu,buttonJaune,buttonRouge,buttonVert,buttonViolet);
+
         });
 
         buttonViolet.setOnAction(value ->  {
             System.out.println("Violet");
-            accusation.add("Violet");
+            accusation.add(new Image("Image/Personnage/violet.jpg"));
             afficherArme();
+            gridPane.getChildren().removeAll(buttonBlanc,buttonBleu,buttonJaune,buttonRouge,buttonVert,buttonViolet);
+
         });
     }
 
@@ -138,33 +147,44 @@ public class Accusation {
 
         buttonchandelier.setOnAction(value ->  {
             System.out.println("chandelier");
-            accusation.add("chandelier");
+            accusation.add(new Image("Image/Arme/candlestick.jpg"));
             afficherPieces();
+            gridPane.getChildren().removeAll(buttonBaton,buttonCle,buttonCouteau,buttoncorde,buttonpistolet,buttonchandelier);
+
         });
         buttonpistolet.setOnAction(value ->  {
             System.out.println("pistolet");
-            accusation.add("pistolet");
+            accusation.add(new Image("Image/Arme/revolver.jpg"));
             afficherPieces();
+            gridPane.getChildren().removeAll(buttonBaton,buttonCle,buttonCouteau,buttoncorde,buttonpistolet,buttonchandelier);
+
         });
         buttoncorde.setOnAction(value ->  {
             System.out.println("corde");
-            accusation.add("corde");
+            accusation.add(new Image("Image/Arme/rope.jpg"));
             afficherPieces();
+            gridPane.getChildren().removeAll(buttonBaton,buttonCle,buttonCouteau,buttoncorde,buttonpistolet,buttonchandelier);
+
         });
         buttonCouteau.setOnAction(value ->  {
             System.out.println("couteau");
-            accusation.add("couteau");
+            accusation.add(new Image("Image/Arme/knife.jpg"));
             afficherPieces();
+            gridPane.getChildren().removeAll(buttonBaton,buttonCle,buttonCouteau,buttoncorde,buttonpistolet,buttonchandelier);
+
         });
         buttonCle.setOnAction(value ->  {
             System.out.println("cle");
-            accusation.add("cle");
+            accusation.add(new Image("Image/Arme/pipe.jpg"));
             afficherPieces();
+            gridPane.getChildren().removeAll(buttonBaton,buttonCle,buttonCouteau,buttoncorde,buttonpistolet,buttonchandelier);
+
         });
         buttonBaton.setOnAction(value ->  {
             System.out.println("Baton");
-            accusation.add("Baton");
+            accusation.add(new Image("Image/Arme/wrench.jpg"));
             afficherPieces();
+            gridPane.getChildren().removeAll(buttonBaton,buttonCle,buttonCouteau,buttoncorde,buttonpistolet,buttonchandelier);
         });
     }
 
@@ -212,66 +232,88 @@ public class Accusation {
 
         buttonsalle_a_manger.setOnAction(value ->  {
             System.out.println("salle a manger");
-            accusation.add("salle_a_manger");
+            accusation.add(new Image("Image/Piece/diningroom.jpg"));
             Comparaison();
+            gridPane.getChildren().removeAll(buttonsalle_a_manger,buttoncuisine,buttonsalon,buttonBureau,buttonLibrairie,buttonHall,buttonConservatoire,buttonSalle_de_Billard,buttonSalle_de_Bal);
         });
 
         buttoncuisine.setOnAction(value ->  {
             System.out.println("Cuisine");
-            accusation.add("Cuisine");
+            accusation.add(new Image("Image/Piece/kitchen.jpg"));
             Comparaison();
+            gridPane.getChildren().removeAll(buttonsalle_a_manger,buttoncuisine,buttonsalon,buttonBureau,buttonLibrairie,buttonHall,buttonConservatoire,buttonSalle_de_Billard,buttonSalle_de_Bal);
         });
 
         buttonsalon.setOnAction(value ->  {
             System.out.println("Salon");
-            accusation.add("Salon");
+            accusation.add(new Image("Image/Piece/lounge.jpg"));
             Comparaison();
+            gridPane.getChildren().removeAll(buttonsalle_a_manger,buttoncuisine,buttonsalon,buttonBureau,buttonLibrairie,buttonHall,buttonConservatoire,buttonSalle_de_Billard,buttonSalle_de_Bal);
         });
 
         buttonSalle_de_Bal.setOnAction(value ->  {
             System.out.println("Salle de Bal");
-            accusation.add("Salle_de_Bal");
+            accusation.add(new Image("Image/Piece/ballroom.jpg"));
             Comparaison();
+            gridPane.getChildren().removeAll(buttonsalle_a_manger,buttoncuisine,buttonsalon,buttonBureau,buttonLibrairie,buttonHall,buttonConservatoire,buttonSalle_de_Billard,buttonSalle_de_Bal);
         });
 
         buttonSalle_de_Billard.setOnAction(value ->  {
             System.out.println("Salle de Billard");
-            accusation.add("Salle_de_Billard");
+            accusation.add(new Image("Image/Piece/billiardroom.jpg"));
             Comparaison();
+            gridPane.getChildren().removeAll(buttonsalle_a_manger,buttoncuisine,buttonsalon,buttonBureau,buttonLibrairie,buttonHall,buttonConservatoire,buttonSalle_de_Billard,buttonSalle_de_Bal);
         });
 
         buttonConservatoire.setOnAction(value ->  {
             System.out.println("Conservatoire");
-            accusation.add("Conservatoire");
+            accusation.add(new Image("Image/Piece/conservatory.jpg"));
             Comparaison();
+            gridPane.getChildren().removeAll(buttonsalle_a_manger,buttoncuisine,buttonsalon,buttonBureau,buttonLibrairie,buttonHall,buttonConservatoire,buttonSalle_de_Billard,buttonSalle_de_Bal);
         });
 
         buttonHall.setOnAction(value ->  {
             System.out.println("Hall");
-            accusation.add("Hall");
+            accusation.add(new Image("Image/Piece/hall.jpg"));
             Comparaison();
+            gridPane.getChildren().removeAll(buttonsalle_a_manger,buttoncuisine,buttonsalon,buttonBureau,buttonLibrairie,buttonHall,buttonConservatoire,buttonSalle_de_Billard,buttonSalle_de_Bal);
         });
 
         buttonLibrairie.setOnAction(value ->  {
             System.out.println("Librairie");
-            accusation.add("Librairie");
+            accusation.add(new Image("Image/Piece/library.jpg"));
             Comparaison();
+            gridPane.getChildren().removeAll();
         });
 
         buttonBureau.setOnAction(value ->  {
             System.out.println("Bureau");
-            accusation.add("Bureau");
+            accusation.add(new Image("Image/Piece/study.jpg"));
             Comparaison();
+            gridPane.getChildren().removeAll(buttonsalle_a_manger,buttoncuisine,buttonsalon,buttonBureau,buttonLibrairie,buttonHall,buttonConservatoire,buttonSalle_de_Billard,buttonSalle_de_Bal);
+
         });
+
     }
 
     private void Comparaison(){
+        gridPane.getChildren().removeAll();
+        BorderPane border = new BorderPane();
+
         Label labelJoueur = new Label("Votre Accusation : ");
         Label labelMain = new Label("Le Suspect : ");
-
+        Button buttonJoueur;
         System.out.println(accusation);
+        borderPane.setTop(labelJoueur);
 
-        popup.close();
+        for (Image j : accusation) {
+            for (int i = 0; i <accusation.size() ; i++) {
+                buttonJoueur= new Button();
+                buttonJoueur.setGraphic(new ImageView(j));
+                gridPane.add(buttonJoueur,i, 0);
+            }
+        }
+
 
     }
 
@@ -283,7 +325,7 @@ public class Accusation {
         System.out.println("Solution du jeu:");
     }
 
-    private ArrayList<String> getAccusation() {
+    private ArrayList<Image> getAccusation() {
         return accusation;
     }
 

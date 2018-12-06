@@ -9,7 +9,9 @@ public class Cluedo {
     private List<Main> listJoueurs;
     private int nbJoueur;
     private int joueurCourant;
-    private Meurtrier meutrier;
+
+
+    public Meurtrier meutrier;
     private TypeCase plateau[][];
     final private int Width = 950;
     final private int Heigth = 1000;
@@ -95,4 +97,12 @@ public class Cluedo {
     }
 
     public TypeCase[][] getPlateau() { return plateau; }
+
+    public Meurtrier getMeutrier() {
+        return meutrier;
+    }
+
+    public void setMeutrier(Meurtrier meutrier) {
+        this.meutrier = meutrier;
+    }
 }
