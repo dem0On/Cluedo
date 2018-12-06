@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="619e39d2-e2b7-40aa-a6a5-f6de914752a1" name="Default" comment="Plateau remis en forme et variable dans cluedo pour taille">
+    <list default="true" id="619e39d2-e2b7-40aa-a6a5-f6de914752a1" name="Default" comment="accusation bug affichage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Appli.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Appli.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/Carte.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/Carte.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/CarteArme.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/CarteArme.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/CarteLieu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/CarteLieu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/CarteSuspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/CarteSuspect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/Cluedo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/Cluedo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/InitCartes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/InitCartes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/Meurtrier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/Meurtrier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/Model/PaquetCartes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/Model/PaquetCartes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cluedo/View/Fenetre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cluedo/View/Fenetre.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Appli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Appli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Cluedo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Cluedo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Accusation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Accusation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Fenetre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Fenetre.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -150,12 +136,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="528" />
+          <entry key="java" value="718" />
+          <entry key="txt" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="528" />
+          <entry key="JAVA" value="718" />
+          <entry key="PLAIN_TEXT" value="24" />
         </counts>
       </usages-collector>
     </session>
@@ -165,8 +153,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/Accusation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1717">
-              <caret line="107" column="28" lean-forward="true" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
+            <state relative-caret-position="187">
+              <caret line="116" column="54" selection-start-line="116" selection-start-column="54" selection-end-line="116" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#12404#12405#0" expanded="true" />
@@ -197,8 +185,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/Fenetre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="101" column="22" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="22" />
+            <state relative-caret-position="99">
+              <caret line="71" column="56" lean-forward="true" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -291,7 +279,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544122171771" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544123706520" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -488,7 +476,7 @@
       <workItem from="1543573006274" duration="3948000" />
       <workItem from="1543825270615" duration="349000" />
       <workItem from="1543867150489" duration="245000" />
-      <workItem from="1544113131550" duration="7654000" />
+      <workItem from="1544113131550" duration="9155000" />
     </task>
     <task id="LOCAL-00001" summary="Plateau remis en forme">
       <created>1543570759656</created>
@@ -504,16 +492,24 @@
       <option name="project" value="LOCAL" />
       <updated>1543576741183</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="accusation bug affichage">
+      <created>1544122308561</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1544122308561</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36822000" />
+    <option name="totallyTimeSpent" value="38323000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1294" height="694" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16774717" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16774717" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -522,7 +518,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32798573" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32798573" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -553,7 +549,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Plateau remis en forme" />
     <MESSAGE value="Plateau remis en forme et variable dans cluedo pour taille" />
-    <option name="LAST_COMMIT_MESSAGE" value="Plateau remis en forme et variable dans cluedo pour taille" />
+    <MESSAGE value="accusation bug affichage" />
+    <option name="LAST_COMMIT_MESSAGE" value="accusation bug affichage" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Image/Arme/candlestick.jpg">
@@ -728,8 +725,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/Fenetre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="101" column="22" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="22" />
+        <state relative-caret-position="99">
+          <caret line="71" column="56" lean-forward="true" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -738,8 +735,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/Accusation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1717">
-          <caret line="107" column="28" lean-forward="true" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
+        <state relative-caret-position="187">
+          <caret line="116" column="54" selection-start-line="116" selection-start-column="54" selection-end-line="116" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#12404#12405#0" expanded="true" />

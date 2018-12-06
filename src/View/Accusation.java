@@ -25,7 +25,7 @@ public class Accusation extends Parent  {
     private Stage primaryStage;
     private Stage popup;
     private ArrayList<String> Hypothese;
-    private ArrayList<String> Accusation;
+    private ArrayList<String> Accusation = new ArrayList<>();
 
     public Accusation(Cluedo cluedo, Stage primaryStage){
         popup = new Stage();
@@ -73,38 +73,38 @@ public class Accusation extends Parent  {
         buttonBlanc.setOnAction(value ->  {
             System.out.println("Blanc");
             accusation.afficherArme();
-            Hypothese.add("Blanc");
+            Accusation.add("Blanc");
             popup.close();
         });
         buttonBleu.setOnAction(value ->  {
             System.out.println("Bleu");
-            Hypothese.add("Bleu");
+            Accusation.add("Bleu");
             accusation.afficherArme();
             popup.close();
         });
         buttonJaune.setOnAction(value ->  {
             System.out.println("Jaune");
-            Hypothese.add("Jaune");
+            Accusation.add("Jaune");
             accusation.afficherArme();
             popup.close();
 
         });
         buttonRouge.setOnAction(value ->  {
             System.out.println("Rouge");
-            Hypothese.add("Rouge");
+            Accusation.add("Rouge");
             accusation.afficherArme();
             popup.close();
 
         });
         buttonVert.setOnAction(value ->  {
             System.out.println("Vert");
-            Hypothese.add("Vert");
+            Accusation.add("Vert");
             accusation.afficherArme();
             popup.close();
         });
         buttonViolet.setOnAction(value ->  {
             System.out.println("Violet");
-            Hypothese.add("Violet");
+            Accusation.add("Violet");
             accusation.afficherArme();
             popup.close();
 
@@ -154,40 +154,41 @@ public class Accusation extends Parent  {
 
         buttonchandelier.setOnAction(value ->  {
             System.out.println("chandelier");
-            Hypothese.add("chandelier");
+            Accusation.add("chandelier");
             accusation.afficherPieces();
             popup.close();
         });
         buttonpistolet.setOnAction(value ->  {
             System.out.println("pistolet");
-            Hypothese.add("pistolet");
+            Accusation.add("pistolet");
             accusation.afficherPieces();
             popup.close();
         });
         buttoncorde.setOnAction(value ->  {
             System.out.println("corde");
-            Hypothese.add("corde");
+            Accusation.add("corde");
             accusation.afficherPieces();
             popup.close();
         });
         buttonCouteau.setOnAction(value ->  {
             System.out.println("couteau");
-            Hypothese.add("couteau");
+            Accusation.add("couteau");
             accusation.afficherPieces();
             popup.close();
         });
         buttonCle.setOnAction(value ->  {
             System.out.println("cle");
-            Hypothese.add("cle");
+            Accusation.add("cle");
             accusation.afficherPieces();
             popup.close();
         });
         buttonBaton.setOnAction(value ->  {
             System.out.println("Baton");
-            Hypothese.add("Baton");
+            Accusation.add("Baton");
             accusation.afficherPieces();
             popup.close();
         });
+
 
         borderPanePopARME.setTop(gridPaneARME);
         Scene sceneArme = new Scene(borderPanePopARME);
@@ -247,56 +248,56 @@ public class Accusation extends Parent  {
 
         buttonsalle_a_manger.setOnAction(value ->  {
             System.out.println("salle a manger");
-            Hypothese.add("salle_a_manger");
+            Accusation.add("salle_a_manger");
             accusation.Comparaison();
             popup.close();
         });
         buttoncuisine.setOnAction(value ->  {
             System.out.println("Cuisine");
-            Hypothese.add("Cuisine");
+            Accusation.add("Cuisine");
             accusation.Comparaison();
             popup.close();
 
         });
         buttonsalon.setOnAction(value ->  {
             System.out.println("Salon");
-            Hypothese.add("Salon");
+            Accusation.add("Salon");
             accusation.Comparaison();
             popup.close();
         });
         buttonSalle_de_Bal.setOnAction(value ->  {
             System.out.println("Salle de Bal");
-            Hypothese.add("Salle_de_Bal");
+            Accusation.add("Salle_de_Bal");
             accusation.Comparaison();
             popup.close();
         });
         buttonSalle_de_Billard.setOnAction(value ->  {
             System.out.println("Salle de Billard");
-            Hypothese.add("Salle_de_Billard");
+            Accusation.add("Salle_de_Billard");
             accusation.Comparaison();
             popup.close();
         });
         buttonConservatoire.setOnAction(value ->  {
             System.out.println("Conservatoire");
-            Hypothese.add("Conservatoire");
+            Accusation.add("Conservatoire");
             accusation.Comparaison();
             popup.close();
         });
         buttonHall.setOnAction(value ->  {
             System.out.println("Hall");
-            Hypothese.add("Hall");
+            Accusation.add("Hall");
             accusation.Comparaison();
             popup.close();
         });
         buttonLibrairie.setOnAction(value ->  {
             System.out.println("Librairie");
-            Hypothese.add("Librairie");
+            Accusation.add("Librairie");
             accusation.Comparaison();
             popup.close();
         });
         buttonBureau.setOnAction(value ->  {
             System.out.println("Bureau");
-            Hypothese.add("Bureau");
+            Accusation.add("Bureau");
             accusation.Comparaison();
             popup.close();
         });
@@ -341,7 +342,7 @@ public class Accusation extends Parent  {
         return Hypothese;
     }
 
-    public ArrayList<String> getAccusation() {
+    private ArrayList<String> getAccusation() {
         return Accusation;
     }
 
