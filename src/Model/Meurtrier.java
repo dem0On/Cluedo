@@ -7,6 +7,30 @@ public class Meurtrier {
     Carte carteArme;
     Carte carteLieu;
 
+    public Carte getCarteSuspect() {
+        return carteSuspect;
+    }
+
+    public void setCarteSuspect(Carte carteSuspect) {
+        this.carteSuspect = carteSuspect;
+    }
+
+    public Carte getCarteArme() {
+        return carteArme;
+    }
+
+    public void setCarteArme(Carte carteArme) {
+        this.carteArme = carteArme;
+    }
+
+    public Carte getCarteLieu() {
+        return carteLieu;
+    }
+
+    public void setCarteLieu(Carte carteLieu) {
+        this.carteLieu = carteLieu;
+    }
+
     public Meurtrier(Carte carteSuspect, Carte carteArme, Carte carteLieu) {
         this.carteSuspect = carteSuspect;
         this.carteArme = carteArme;

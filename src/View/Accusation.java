@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -28,8 +29,8 @@ public class Accusation {
         borderPane = new BorderPane();
         this.cluedo = cluedo;
         this.primaryStage = primaryStage;
-        borderPane.setCenter(gridPane);
-        Scene scene = new Scene(borderPane);
+        borderPane.setLeft(gridPane);
+        Scene scene = new Scene(borderPane,1500,600, Color.LAWNGREEN);
 
         popup.initModality(Modality.APPLICATION_MODAL);
         popup.initOwner(primaryStage);
@@ -297,24 +298,50 @@ public class Accusation {
     }
 
     private void Comparaison(){
+
         gridPane.getChildren().removeAll();
         BorderPane border = new BorderPane();
 
         Label labelJoueur = new Label("Votre Accusation : ");
         Label labelMain = new Label("Le Suspect : ");
         Button buttonJoueur;
-        System.out.println(accusation);
+        Button buttonMeurtrierPerso;
+        Button buttonMeurtrierArme;
+        Button buttonMeurtrierPiece;
         borderPane.setTop(labelJoueur);
+        int compteur=0;
 
         for (Image j : accusation) {
-            for (int i = 0; i <accusation.size() ; i++) {
-                buttonJoueur= new Button();
-                buttonJoueur.setGraphic(new ImageView(j));
-                gridPane.add(buttonJoueur,i, 0);
-            }
+            buttonJoueur= new Button();
+            buttonJoueur.setGraphic(new ImageView(j));
+            gridPane.add(buttonJoueur,compteur, 0);
+            compteur+=1;
         }
 
+        borderPane.setBottom(labelMain);
+        buttonMeurtrierPerso = new Button();
+        buttonMeurtrierArme = new Button();
+        buttonMeurtrierPiece = new Button();
+        buttonMeurtrierPerso.setGraphic(new ImageView(cluedo.getMeutrier().getCarteSuspect().getImageCarte()));
+        buttonMeurtrierArme.setGraphic(new ImageView(cluedo.getMeutrier().getCarteArme().getImageCarte()));
+        buttonMeurtrierPiece.setGraphic(new ImageView(cluedo.getMeutrier().getCarteLieu().getImageCarte()));
+        gridPane.add(buttonMeurtrierPerso,0, 1);
+        gridPane.add(buttonMeurtrierArme,1, 1);
+        gridPane.add(buttonMeurtrierPiece,2, 1);
 
+
+    }
+
+    public boolean suspectTrouve(ArrayList<Image> suspect, ArrayList<Image> meurtrier){
+        for(Image i: suspect){
+            for (Image j : meurtrier){
+                if (i.equals(j)){
+                    return true;
+                }
+            }
+
+        }
+        return false;
     }
 
     public void accuser(){
