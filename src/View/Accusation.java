@@ -29,7 +29,7 @@ public class Accusation {
         borderPane = new BorderPane();
         this.cluedo = cluedo;
         this.primaryStage = primaryStage;
-        borderPane.setLeft(gridPane);
+        borderPane.setCenter(gridPane);
         Scene scene = new Scene(borderPane,1500,600, Color.LAWNGREEN);
 
         popup.initModality(Modality.APPLICATION_MODAL);
@@ -318,16 +318,17 @@ public class Accusation {
             compteur+=1;
         }
 
-        borderPane.setBottom(labelMain);
+
         buttonMeurtrierPerso = new Button();
         buttonMeurtrierArme = new Button();
         buttonMeurtrierPiece = new Button();
         buttonMeurtrierPerso.setGraphic(new ImageView(cluedo.getMeutrier().getCarteSuspect().getImageCarte()));
         buttonMeurtrierArme.setGraphic(new ImageView(cluedo.getMeutrier().getCarteArme().getImageCarte()));
         buttonMeurtrierPiece.setGraphic(new ImageView(cluedo.getMeutrier().getCarteLieu().getImageCarte()));
-        gridPane.add(buttonMeurtrierPerso,0, 1);
-        gridPane.add(buttonMeurtrierArme,1, 1);
-        gridPane.add(buttonMeurtrierPiece,2, 1);
+        gridPane.add(labelMain,0,1);
+        gridPane.add(buttonMeurtrierPerso,0, 2);
+        gridPane.add(buttonMeurtrierArme,1, 2);
+        gridPane.add(buttonMeurtrierPiece,2, 2);
 
 
     }

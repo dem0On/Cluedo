@@ -58,8 +58,9 @@ public class Fenetre extends Parent {
 
 
         hBox1.getChildren().add(buttoncarte);
-        hBox1.getChildren().add(buttonhypothese);
         hBox1.getChildren().add(buttonAccusation);
+        hBox1.getChildren().add(buttonhypothese);
+
         hBoxJoueur.getChildren().add(buttonNote);
         hBoxJoueur.getChildren().add(buttonSuivant);
 
