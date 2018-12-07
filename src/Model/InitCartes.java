@@ -21,7 +21,7 @@ public class InitCartes {
 
         paquetArme.add(new CarteArme("Le chandelier", new Image("Image/Arme/candlestick.jpg")));
         paquetArme.add(new CarteArme("Le pistolet", new Image("Image/Arme/revolver.jpg")));
-        paquetArme.add(new CarteArme("Le corde", new Image("Image/Arme/rope.jpg")));
+        paquetArme.add(new CarteArme("La corde", new Image("Image/Arme/rope.jpg")));
         paquetArme.add(new CarteArme("Le Couteau", new Image("Image/Arme/knife.jpg")));
         paquetArme.add(new CarteArme("Le Baton", new Image("Image/Arme/pipe.jpg")));
         paquetArme.add(new CarteArme("La Clé", new Image("Image/Arme/wrench.jpg")));

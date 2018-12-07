@@ -1,5 +1,7 @@
 package Model;
 
+import javafx.scene.paint.Color;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,16 +9,20 @@ public class Cluedo {
     private List<Main> listJoueurs;
     private int nbJoueur;
     private int joueurCourant;
-    private Meurtrier meutrier;
-    private TypeCase plateau[][];
 
-    public Cluedo(int nbJoueur) {
-        this.nbJoueur = nbJoueur;
+
+    public Meurtrier meutrier;
+    private TypeCase plateau[][];
+    final private int Width = 950;
+    final private int Heigth = 1000;
+
+    public Cluedo(Color[] tabJoueur) {
+        this.nbJoueur = tabJoueur.length;
         joueurCourant = 0;
         listJoueurs = new ArrayList<>();
         InitPlateau initPlateau = new InitPlateau();
         plateau = initPlateau.getPlateau();
-        initJeu();
+        initJeu(tabJoueur);
     }
 
     private Note nouvelleNote(InitCartes initCartes) {
@@ -36,7 +42,7 @@ public class Cluedo {
         return note;
     }
 
-    private void initJeu(){
+    private void initJeu(Color[] tabJoueur){
         InitCartes initCartes = new InitCartes();
         PaquetCartes paquetLieu = initCartes.getPaquetLieu();
         PaquetCartes paquetArme = initCartes.getPaquetArme();
@@ -53,20 +59,25 @@ public class Cluedo {
         paquetCartes.add(paquetMeutrtrier);
         paquetCartes.melangerPacket();
 
-        for (int i = 0; i < nbJoueur; i++) {
+        for (int i = 0; i < tabJoueur.length; i++) {
             Note note = nouvelleNote(new InitCartes());
-            listJoueurs.add(new Main("Joueur"+i, note));
+            listJoueurs.add(new Main("Joueur"+i, note, new Pions(tabJoueur[i])));
         }
 
         int taillePaquet = paquetCartes.size();
         for (int i = 0; i < taillePaquet; i++) {
             listJoueurs.get(i%nbJoueur).ajouter(paquetCartes.tirerCarte());
         }
+        listJoueurs.get(joueurCourant).lancerDes();
     }
 
     public void joueurSuivant(){
         joueurCourant++;
         joueurCourant = joueurCourant%nbJoueur;
+    }
+
+    public void lancerDes(){
+        listJoueurs.get(joueurCourant).lancerDes();
     }
 
     public List<Main> getListJoueurs() {
@@ -75,5 +86,23 @@ public class Cluedo {
 
     public int getJoueurCourant() {
         return joueurCourant;
+    }
+
+    public int getHeigth() {
+        return Heigth;
+    }
+
+    public int getWidth() {
+        return Width;
+    }
+
+    public TypeCase[][] getPlateau() { return plateau; }
+
+    public Meurtrier getMeutrier() {
+        return meutrier;
+    }
+
+    public void setMeutrier(Meurtrier meutrier) {
+        this.meutrier = meutrier;
     }
 }

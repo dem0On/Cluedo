@@ -11,23 +11,25 @@ public class Appli extends Application {
     @Override
     public void start(Stage primaryStage){
         primaryStage.setTitle("Cluedo");
-        //Group root = new Group();
-        Cluedo cluedo = new Cluedo(3);
-        int WIDTH = 1067;
-        int HEIGHT = 1100;
+        Color[] tab = {Color.RED, Color.GREEN, Color.BLUE};
+        Cluedo cluedo = new Cluedo(tab);
+        int WIDTH = cluedo.getWidth();
+        int HEIGHT = cluedo.getHeigth();
 
         PopUpMain popUpMain = new PopUpMain(cluedo, primaryStage);
         Accusation accusation = new Accusation(cluedo,primaryStage);
         NoteView noteView = new NoteView(cluedo,primaryStage);
+        DebutTour debutTour = new DebutTour(cluedo, primaryStage);
+        Hypothese hypothese = new Hypothese(cluedo, primaryStage);
 
-        PopUp popUp = new PopUp(popUpMain, accusation, noteView);
+        PopUp popUp = new PopUp(popUpMain, accusation, noteView, debutTour, hypothese);
 
         Fenetre fenetre = new Fenetre(cluedo, popUp);
+
 
         Scene scene = new Scene(fenetre,WIDTH,HEIGHT, Color.LIGHTGREY);
 
         primaryStage.setScene(scene);
-
         primaryStage.show();
     }
 

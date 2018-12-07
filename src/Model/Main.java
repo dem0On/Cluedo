@@ -9,9 +9,10 @@ public class Main {
     private Note note;
     private Pions pion;
 
-    public Main(String nom, Note note) {
+    public Main(String nom, Note note, Pions pion) {
         this.nom = nom;
         this.note = note;
+        this.pion = pion;
         this.main = new ArrayList<>();
     }
 
@@ -32,11 +33,10 @@ public class Main {
 
     public void lancerDes(){
         int des1 , des2, somme;
-        des1 = (int) Math.random()*6 + 1;
-        des2 = (int) Math.random()*6 + 1;
+        des1 = (int) (Math.random()*6) + 1;
+        des2 = (int) (Math.random()*6) + 1;
         somme = des1 + des2;
         pion.setNbfDeplacement(somme);
-        System.out.println("nombre de déplacement : "+somme);
     }
 
     public List<Carte> getMain() {
@@ -45,5 +45,9 @@ public class Main {
 
     public String getNom() {
         return nom;
+    }
+
+    public Pions getPion() {
+        return pion;
     }
 }
