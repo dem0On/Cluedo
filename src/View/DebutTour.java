@@ -57,7 +57,7 @@ public class DebutTour {
                 cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().setLocation(3, 19);
             }
             if(typeCase == TypeCase.Conservatoire){
-                cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().setLocation(17, 7);
+                cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().setLocation(17, 4);
             }
             fenetre.actualiserPlateau();
             popup.close();

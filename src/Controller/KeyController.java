@@ -57,7 +57,7 @@ public class KeyController implements EventHandler<KeyEvent> {
     }
 
     private boolean isDeplacementHaut(int x, int y){
-        if(y<0) return false;
+        if(y==0) return false;
         if(cluedo.getPlateau()[x][y-1] != TypeCase.PorteVerticale) {
             if(cluedo.getPlateau()[x][y-1] != TypeCase.Couloir) return false;
         }
@@ -66,7 +66,7 @@ public class KeyController implements EventHandler<KeyEvent> {
     }
 
     private boolean isDeplacementBas(int x, int y){
-        if(y>25) return false;
+        if(y==24) return false;
         if(cluedo.getPlateau()[x][y+1] != TypeCase.PorteVerticale) {
             if(cluedo.getPlateau()[x][y+1] != TypeCase.Couloir) return false;
         }
@@ -75,7 +75,7 @@ public class KeyController implements EventHandler<KeyEvent> {
     }
 
     private boolean isDeplacementGauche(int x, int y){
-        if(x<0) return false;
+        if(x==0) return false;
         if(cluedo.getPlateau()[x-1][y] != TypeCase.PorteHorizontal) {
             if(cluedo.getPlateau()[x-1][y] != TypeCase.Couloir) return false;
         }
@@ -84,7 +84,7 @@ public class KeyController implements EventHandler<KeyEvent> {
     }
 
     private boolean isDeplacementDroite(int x, int y){
-        if(x>24) return false;
+        if(x==23) return false;
         if(cluedo.getPlateau()[x+1][y] != TypeCase.PorteHorizontal){
             if(cluedo.getPlateau()[x+1][y] != TypeCase.Couloir) return false;
         }

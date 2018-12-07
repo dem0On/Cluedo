@@ -54,17 +54,17 @@ public class InitPlateau {
 
                 // Piece Cuisine
                 else if( (x>=18 && x<24) && (y>=18 && y<=24) ){
-                    if(x==18 && y==19 ) plateau[x][y] = TypeCase.PorteVerticale; // Porte
+                    if(x==19 && y==18 ) plateau[x][y] = TypeCase.PorteVerticale; // Porte
                     else plateau[x][y] = TypeCase.Cuisine;
                 }
 
                 // Piece Salle Danse
-                else if( (x>=8 && x<=15) && (y>=17 && y<=23) ){
+                else if( (x>=8 && x<=15) && (y>=17 && y<=22) ){
                     if(x==9 && y==17 || x==14 && y==17 ) plateau[x][y] = TypeCase.PorteVerticale; // Porte
                     else if((x==8 || x==15) && y==19) plateau[x][y] = TypeCase.PorteHorizontal; // Porte
                     else plateau[x][y] = TypeCase.SalleDanse;
                 }
-                else if( (x>=10 && x<=13) && (y>=24 && y<=25) ){
+                else if( (x>=10 && x<=14) && (y>=23 && y<=24) ){
                     plateau[x][y] = TypeCase.SalleDanse;
                 }
 
@@ -83,10 +83,10 @@ public class InitPlateau {
                 }
 
                 //Zone Vide-Bas
-                else if(( (x>=0 && x<=8) || (x>=15 && x<=24) ) && y==25){
+                else if(( (x>=0 && x<=8) || (x>=16 && x<=24) ) && y==24){
                     plateau[x][y] = null;
                 }
-                else if( (x==6 || x==17) && y==24){
+                else if( (x==6 || x==17) && y==23){
                     plateau[x][y] = null;
                 }
 
