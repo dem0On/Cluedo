@@ -9,11 +9,9 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 
 import java.awt.*;
 
@@ -83,7 +81,12 @@ public class Fenetre extends Parent {
             int y = (int)cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().getY();
             buttonhypothese.setVisible(false);
             if(validerDebutTour(x,y) == null){
-                cluedo.lancerDes();
+                Point point = cluedo.lancerDes();
+                try {
+                    lancerDes(point.x, point.y);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
             else{
                 popUp.getDebutTour().afficherPopUp();
@@ -141,5 +144,11 @@ public class Fenetre extends Parent {
             return TypeCase.Conservatoire;
         }
         return null;
+    }
+
+    public void lancerDes(int des1, int des2) throws InterruptedException {
+        popUp.getLancerDes().afficherLancer(des1, des2);
+        Thread.sleep(1000);
+        popUp.getLancerDes().close();
     }
 }

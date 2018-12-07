@@ -7,13 +7,15 @@ public class PopUp {
     private NoteView noteView;
     private DebutTour debutTour;
     private Hypothese hypothese;
+    private LancerDes lancerDes;
 
-    public PopUp(PopUpMain popUpMain, Accusation accusation, NoteView noteView, DebutTour debutTour, Hypothese hypothese) {
+    public PopUp(PopUpMain popUpMain, Accusation accusation, NoteView noteView, DebutTour debutTour, Hypothese hypothese, LancerDes lancerDes) {
         this.popUpMain = popUpMain;
         this.accusation = accusation;
         this.noteView = noteView;
         this.debutTour = debutTour;
         this.hypothese = hypothese;
+        this.lancerDes = lancerDes;
     }
 
     public PopUpMain getPopUpMain() {
@@ -34,5 +36,9 @@ public class PopUp {
 
     public Hypothese getHypothese() {
         return hypothese;
+    }
+
+    public LancerDes getLancerDes() {
+        return lancerDes;
     }
 }

@@ -2,6 +2,7 @@ package Model;
 
 import javafx.scene.paint.Color;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,7 +69,7 @@ public class Cluedo {
         for (int i = 0; i < taillePaquet; i++) {
             listJoueurs.get(i%nbJoueur).ajouter(paquetCartes.tirerCarte());
         }
-        listJoueurs.get(joueurCourant).lancerDes();
+        lancerDes();
     }
 
     public void joueurSuivant(){
@@ -76,8 +77,8 @@ public class Cluedo {
         joueurCourant = joueurCourant%nbJoueur;
     }
 
-    public void lancerDes(){
-        listJoueurs.get(joueurCourant).lancerDes();
+    public Point lancerDes(){
+        return listJoueurs.get(joueurCourant).lancerDes();
     }
 
     public List<Main> getListJoueurs() {

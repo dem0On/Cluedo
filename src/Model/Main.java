@@ -1,5 +1,6 @@
 package Model;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,12 +32,13 @@ public class Main {
         return note;
     }
 
-    public void lancerDes(){
+    public Point lancerDes(){
         int des1 , des2, somme;
         des1 = (int) (Math.random()*6) + 1;
         des2 = (int) (Math.random()*6) + 1;
         somme = des1 + des2;
         pion.setNbfDeplacement(somme);
+        return new Point(des1, des2);
     }
 
     public List<Carte> getMain() {
