@@ -148,6 +148,7 @@ public class Fenetre extends Parent {
 
     public void lancerDes(int des1, int des2) throws InterruptedException {
         popUp.getLancerDes().afficherLancer(des1, des2);
+        popUp.getLancerDes().show();
         Thread.sleep(1000);
         popUp.getLancerDes().close();
     }

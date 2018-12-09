@@ -13,6 +13,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.awt.*;
+
 public class DebutTour {
     private Stage popup;
     private Cluedo cluedo;
@@ -65,11 +67,17 @@ public class DebutTour {
         });
 
         lancerDes.setOnAction(value->{
-            cluedo.lancerDes();
+            Point point = cluedo.lancerDes();
+            try {
+                fenetre.lancerDes(point.x, point.y);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             popup.close();
             fenetre.actualiserPlateau();
             fenetre.actualiserInterface();
         });
+
         vBox1.getChildren().add(passageSecret);
         vBox1.getChildren().add(lancerDes);
         popup.show();

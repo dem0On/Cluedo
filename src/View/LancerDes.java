@@ -39,10 +39,13 @@ public class LancerDes {
         imageD2.setFitWidth(100);
         imageD2.setPreserveRatio(true);
         hBox.getChildren().add(imageD2);
-        popup.show();
     }
 
     public void close() {
         popup.close();
+    }
+
+    public void show() {
+        popup.show();
     }
 }
