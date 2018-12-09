@@ -1,10 +1,9 @@
 package View;
 
-import Model.CheckNote;
+import Model.Joueurs.CheckNote;
 import Model.Cluedo;
-import Model.Main;
+import Model.Joueurs.Main;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.control.CheckBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;

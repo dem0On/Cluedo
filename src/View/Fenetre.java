@@ -2,12 +2,14 @@ package View;
 
 import Controller.KeyController;
 import Model.Cluedo;
-import Model.Pions;
-import Model.TypeCase;
+import Model.Joueurs.Actions;
+import Model.Joueurs.Pions;
+import Model.Plateau.TypeCase;
 import javafx.scene.Parent;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -24,27 +26,34 @@ public class Fenetre extends Parent {
     private Button buttonhypothese;
     private Button buttonAccusation;
     private Label labelNbJoueur;
+    private TextArea texteLog;
 
     public Fenetre(Cluedo cluedo, PopUp popUp) {
         KeyController keyController = new KeyController(cluedo, this);
         this.popUp = popUp;
         this.cluedo = cluedo;
         this.popUp.getDebutTour().setFenetre(this);
-        canvas = new Canvas(cluedo.getWidth(), cluedo.getHeigth());
-        borderPaneRoot = new BorderPane();
+        canvas = new Canvas(800, 800);
         VBox vBox = new VBox();
+        HBox hBox = new HBox();
         actualiserPlateau();
         initAction();
+        actualiserLog();
         vBox.getChildren().add(borderPaneRoot);
         vBox.getChildren().add(canvas);
+        hBox.getChildren().add(vBox);
+        hBox.getChildren().add(texteLog);
+
         this.setOnKeyPressed(keyController);
-        this.getChildren().add(vBox);
+        this.getChildren().add(hBox);
     }
 
     private void initAction() {
         HBox hBox1 = new HBox();
         HBox hBoxJoueur = new HBox();
 
+        borderPaneRoot = new BorderPane();
+        texteLog = new TextArea();
         buttonhypothese = new Button("Proposer une hypothèse");
         buttonAccusation = new Button("Accusation !");
         buttonhypothese.setVisible(false);
@@ -151,5 +160,20 @@ public class Fenetre extends Parent {
         Point point = cluedo.lancerDes();
         popUp.getLancerDes().afficherLancer(point.x, point.y);
         popUp.getLancerDes().show();
+    }
+
+    public void actualiserLog(){
+        String log = "Log : \n";
+        for (Actions actions : cluedo.getLog().getListActions()) {
+            if(actions.isHypothese()){
+                log = log + "-Hypothese : \n        Arme: " + actions.getCarteArme().getNom() + "\n        Personnage: " + actions.getCartePersonnage().getNom() +
+                            "\n        Piéce: " + actions.getCartePiece().getNom() + "\n        Carte montrer : "+ actions.getCarteMontrer().getNom() + "\n";
+            }
+            else{
+                log = log + "-Accusation : \n        Arme: " + actions.getCarteArme().getNom() + "\n        Personnage: " + actions.getCartePersonnage().getNom() +
+                        "\n        Piéce: " + actions.getCartePiece().getNom() + "\n        Carte montrer : "+ actions.getCarteMontrer().getNom() + "\n";
+            }
+        }
+        texteLog.setText(log);
     }
 }

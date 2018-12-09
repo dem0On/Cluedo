@@ -1,7 +1,7 @@
 package View;
 
 import Model.Cluedo;
-import Model.Main;
+import Model.Joueurs.Main;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;

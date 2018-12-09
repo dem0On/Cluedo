@@ -1,19 +1,12 @@
 package View;
 
-import Model.CheckNote;
 import Model.Cluedo;
-import Model.Main;
-import Model.TypeCase;
+import Model.Plateau.TypeCase;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
-import java.awt.*;
 
 public class DebutTour {
     private Stage popup;

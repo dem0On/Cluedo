@@ -1,4 +1,4 @@
-package Model;
+package Model.Plateau;
 
 public class InitPlateau {
     private TypeCase plateau[][];

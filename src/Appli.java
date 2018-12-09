@@ -13,8 +13,8 @@ public class Appli extends Application {
         primaryStage.setTitle("Cluedo");
         Color[] tab = {Color.RED, Color.GREEN, Color.BLUE};
         Cluedo cluedo = new Cluedo(tab);
-        int WIDTH = cluedo.getWidth();
-        int HEIGHT = cluedo.getHeigth();
+        final int Width = 1000; // 1000 avec log ou 800 sans log pour la fenetre
+        final int Heigth = 825;
 
         PopUpMain popUpMain = new PopUpMain(cluedo, primaryStage);
         Accusation accusation = new Accusation(cluedo,primaryStage);
@@ -28,7 +28,7 @@ public class Appli extends Application {
         Fenetre fenetre = new Fenetre(cluedo, popUp);
 
 
-        Scene scene = new Scene(fenetre,WIDTH,HEIGHT, Color.LIGHTGREY);
+        Scene scene = new Scene(fenetre,Width,Heigth, Color.LIGHTGREY);
 
         primaryStage.setScene(scene);
         primaryStage.show();

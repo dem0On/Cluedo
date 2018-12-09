@@ -1,4 +1,4 @@
-package Model;
+package Model.Joueurs;
 
 public class CheckNote {
     private String nom;
