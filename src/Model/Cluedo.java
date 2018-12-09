@@ -69,7 +69,6 @@ public class Cluedo {
         for (int i = 0; i < taillePaquet; i++) {
             listJoueurs.get(i%nbJoueur).ajouter(paquetCartes.tirerCarte());
         }
-        lancerDes();
     }
 
     public void joueurSuivant(){

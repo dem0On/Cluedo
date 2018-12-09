@@ -32,6 +32,8 @@ public class Appli extends Application {
 
         primaryStage.setScene(scene);
         primaryStage.show();
+        fenetre.lancerDes();
+        fenetre.actualiserInterface();
     }
 
 

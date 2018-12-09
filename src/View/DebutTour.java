@@ -67,12 +67,7 @@ public class DebutTour {
         });
 
         lancerDes.setOnAction(value->{
-            Point point = cluedo.lancerDes();
-            try {
-                fenetre.lancerDes(point.x, point.y);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            fenetre.lancerDes();
             popup.close();
             fenetre.actualiserPlateau();
             fenetre.actualiserInterface();

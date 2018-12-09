@@ -12,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 
 import java.awt.*;
 
@@ -81,17 +82,13 @@ public class Fenetre extends Parent {
             int y = (int)cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().getY();
             buttonhypothese.setVisible(false);
             if(validerDebutTour(x,y) == null){
-                Point point = cluedo.lancerDes();
-                try {
-                    lancerDes(point.x, point.y);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                lancerDes();
             }
             else{
                 popUp.getDebutTour().afficherPopUp();
             }
             actualiserInterface();
+            actualiserPlateau();
         });
 
         buttonNote.setOnAction(value -> {
@@ -117,6 +114,10 @@ public class Fenetre extends Parent {
         canvas.getGraphicsContext2D().drawImage(new Image("Image/plateau.jpg"), 0, 0);
         for (int i = 0; i < cluedo.getListJoueurs().size(); i++) {
             Pions pions = cluedo.getListJoueurs().get(i).getPion();
+            if(cluedo.getListJoueurs().get(cluedo.getJoueurCourant()) == cluedo.getListJoueurs().get(i)){
+                canvas.getGraphicsContext2D().setFill(Color.BLACK);
+                canvas.getGraphicsContext2D().fillOval(pions.getPoint().getX() * 30 + 52, pions.getPoint().getY() * 30 + 42, 22, 22);
+            }
             canvas.getGraphicsContext2D().setFill(pions.getCouleur());
             canvas.getGraphicsContext2D().fillOval(pions.getPoint().getX() * 30 + 56, pions.getPoint().getY() * 30 + 46, 15, 15);
         }
@@ -146,10 +147,9 @@ public class Fenetre extends Parent {
         return null;
     }
 
-    public void lancerDes(int des1, int des2) throws InterruptedException {
-        popUp.getLancerDes().afficherLancer(des1, des2);
+    public void lancerDes(){
+        Point point = cluedo.lancerDes();
+        popUp.getLancerDes().afficherLancer(point.x, point.y);
         popUp.getLancerDes().show();
-        Thread.sleep(1000);
-        popUp.getLancerDes().close();
     }
 }

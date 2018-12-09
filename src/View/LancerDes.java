@@ -41,10 +41,6 @@ public class LancerDes {
         hBox.getChildren().add(imageD2);
     }
 
-    public void close() {
-        popup.close();
-    }
-
     public void show() {
         popup.show();
     }
