@@ -2,7 +2,6 @@ package View;
 import Model.Cluedo;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -10,6 +9,12 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.util.ArrayList;
+
+/*
+
+    MODIFIER TOUTE LES iMAGES PAR CARTE ( IL EXISTE LA CLASSE INITCARTE QUI A TOUS LES CARTES DU JEU )
+
+ */
 
 public class Hypothese {
     private Cluedo cluedo;

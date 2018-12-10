@@ -13,6 +13,7 @@ import java.util.List;
 
 public class Cluedo {
     private List<Main> listJoueurs;
+    private List<Main> listJoueursElliminer;
     private int nbJoueur;
     private int joueurCourant;
     private HistoryAction log;
@@ -27,6 +28,7 @@ public class Cluedo {
         this.nbJoueur = tabJoueur.length;
         joueurCourant = 0;
         listJoueurs = new ArrayList<>();
+        listJoueursElliminer = new ArrayList<>();
         InitPlateau initPlateau = new InitPlateau();
         plateau = initPlateau.getPlateau();
         initJeu(tabJoueur);
@@ -80,6 +82,15 @@ public class Cluedo {
     public void joueurSuivant(){
         joueurCourant++;
         joueurCourant = joueurCourant%nbJoueur;
+        for (int i = 0; i < listJoueursElliminer.size(); i++) {
+            if(listJoueursElliminer.get(i) == listJoueurs.get(joueurCourant)){
+                joueurCourant++;
+                joueurCourant = joueurCourant%nbJoueur;
+            }
+        }
+        if(listJoueursElliminer.size()==listJoueurs.size()){
+            System.out.println("Fin de Partie");
+        }
     }
 
     public Point lancerDes(){
@@ -116,5 +127,12 @@ public class Cluedo {
         Actions action2 = new ActionAccusation(new CarteSuspect("Le Violet", new Image("Image/Personnage/violet.jpg")), new CarteArme("Le chandelier", new Image("Image/Arme/candlestick.jpg")), new CarteLieu("La salle a manger", new Image("Image/Piece/diningroom.jpg")));
         action2.setCarteMontrer(new CarteSuspect("Le Violet", new Image("Image/Personnage/violet.jpg")));
         log.add(action2);
+
+        Actions action3 = new ActionHypothese(new CarteSuspect("Le Violet", new Image("Image/Personnage/violet.jpg")), new CarteArme("Le chandelier", new Image("Image/Arme/candlestick.jpg")), new CarteLieu("La salle a manger", new Image("Image/Piece/diningroom.jpg")));
+        log.add(action3);
+    }
+
+    public void addElliminer(){
+        listJoueursElliminer.add(listJoueurs.get(joueurCourant));
     }
 }

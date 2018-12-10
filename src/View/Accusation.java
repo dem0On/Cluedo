@@ -1,7 +1,10 @@
 package View;
+
+import Model.Cartes.Meurtrier;
 import Model.Cluedo;
+import Model.Joueurs.ActionAccusation;
+import Model.Joueurs.Actions;
 import javafx.scene.Scene;
-import Model.Cluedo;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -13,6 +16,13 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
+
+/*
+
+    MODIFIER TOUTE LES iMAGES PAR CARTE ( IL EXISTE LA CLASSE INITCARTE QUI A TOUS LES CARTES DU JEU )
+
+ */
+
 
 public class Accusation {
     private Cluedo cluedo;
@@ -43,7 +53,8 @@ public class Accusation {
     }
 
     void afficherPersonnages() {
-        gridPane.getChildren().removeAll();
+        accusation.clear();
+        gridPane.getChildren().clear();
 
         Image imageBlanc = new Image("Image/Personnage/blanc.jpg");
         Image imageBleu= new Image("Image/Personnage/bleu.jpg");
@@ -118,7 +129,7 @@ public class Accusation {
     }
 
     private void afficherArme(){
-        gridPane.getChildren().removeAll();
+        gridPane.getChildren().clear();
 
         Image chandelier = new Image("Image/Arme/candlestick.jpg");
         Image pistolet = new Image("Image/Arme/revolver.jpg");
@@ -176,21 +187,21 @@ public class Accusation {
         });
         buttonCle.setOnAction(value ->  {
             System.out.println("cle");
-            accusation.add(new Image("Image/Arme/pipe.jpg"));
+            accusation.add(new Image("Image/Arme/wrench.jpg"));
             afficherPieces();
             gridPane.getChildren().removeAll(buttonBaton,buttonCle,buttonCouteau,buttoncorde,buttonpistolet,buttonchandelier);
 
         });
         buttonBaton.setOnAction(value ->  {
             System.out.println("Baton");
-            accusation.add(new Image("Image/Arme/wrench.jpg"));
+            accusation.add(new Image("Image/Arme/pipe.jpg"));
             afficherPieces();
             gridPane.getChildren().removeAll(buttonBaton,buttonCle,buttonCouteau,buttoncorde,buttonpistolet,buttonchandelier);
         });
     }
 
     private void afficherPieces(){
-        gridPane.getChildren().removeAll();
+        gridPane.getChildren().clear();
 
         Image salle_a_manger = new Image("Image/Piece/diningroom.jpg");
         Image cuisine = new Image("Image/Piece/kitchen.jpg");
@@ -299,7 +310,7 @@ public class Accusation {
 
     private void Comparaison(){
 
-        gridPane.getChildren().removeAll();
+        gridPane.getChildren().clear();
         BorderPane border = new BorderPane();
 
         Label labelJoueur = new Label("Votre Accusation : ");
@@ -318,39 +329,49 @@ public class Accusation {
             compteur+=1;
         }
 
+        Meurtrier meurtrier = cluedo.getMeutrier();
 
         buttonMeurtrierPerso = new Button();
         buttonMeurtrierArme = new Button();
         buttonMeurtrierPiece = new Button();
-        buttonMeurtrierPerso.setGraphic(new ImageView(cluedo.getMeutrier().getCarteSuspect().getImageCarte()));
-        buttonMeurtrierArme.setGraphic(new ImageView(cluedo.getMeutrier().getCarteArme().getImageCarte()));
-        buttonMeurtrierPiece.setGraphic(new ImageView(cluedo.getMeutrier().getCarteLieu().getImageCarte()));
+        buttonMeurtrierPerso.setGraphic(new ImageView(meurtrier.getCarteSuspect().getImageCarte()));
+        buttonMeurtrierArme.setGraphic(new ImageView(meurtrier.getCarteArme().getImageCarte()));
+        buttonMeurtrierPiece.setGraphic(new ImageView(meurtrier.getCarteLieu().getImageCarte()));
         gridPane.add(labelMain,0,1);
         gridPane.add(buttonMeurtrierPerso,0, 2);
         gridPane.add(buttonMeurtrierArme,1, 2);
         gridPane.add(buttonMeurtrierPiece,2, 2);
 
+        ArrayList<Image> listImageMeutrier = new ArrayList<>();
+        listImageMeutrier.add(meurtrier.getCarteSuspect().getImageCarte());
+        listImageMeutrier.add(meurtrier.getCarteArme().getImageCarte());
+        listImageMeutrier.add(meurtrier.getCarteLieu().getImageCarte());
 
+        Actions action2 = new ActionAccusation(meurtrier.getCarteSuspect(), meurtrier.getCarteArme(), meurtrier.getCarteLieu());
+        cluedo.getLog().add(action2);
+
+        if(suspectEstTrouvee(listImageMeutrier, accusation)){
+            System.out.println("Fin de partie");
+        }
+        else
+            cluedo.addElliminer();
     }
 
-    public boolean suspectTrouve(ArrayList<Image> suspect, ArrayList<Image> meurtrier){
+    public boolean suspectEstTrouvee(ArrayList<Image> suspect, ArrayList<Image> meurtrier){
+        int cpt = 0;
+        System.out.println("avant");
         for(Image i: suspect){
             for (Image j : meurtrier){
                 if (i.equals(j)){
-                    return true;
+                    System.out.println("tets");
+                    cpt++;
                 }
             }
-
+        }
+        if(cpt == 3){
+            return true;
         }
         return false;
-    }
-
-    public void accuser(){
-        System.out.println("J'ACCUSE!");
-    }
-
-    public void afficherSolution(){
-        System.out.println("Solution du jeu:");
     }
 
     private ArrayList<Image> getAccusation() {

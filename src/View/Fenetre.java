@@ -98,6 +98,7 @@ public class Fenetre extends Parent {
             }
             actualiserInterface();
             actualiserPlateau();
+            actualiserLog();
         });
 
         buttonNote.setOnAction(value -> {
@@ -166,12 +167,16 @@ public class Fenetre extends Parent {
         String log = "Log : \n";
         for (Actions actions : cluedo.getLog().getListActions()) {
             if(actions.isHypothese()){
-                log = log + "-Hypothese : \n        Arme: " + actions.getCarteArme().getNom() + "\n        Personnage: " + actions.getCartePersonnage().getNom() +
-                            "\n        Piéce: " + actions.getCartePiece().getNom() + "\n        Carte montrer : "+ actions.getCarteMontrer().getNom() + "\n";
+                if(actions.getCarteMontrer() != null)
+                    log = log + "-Hypothese : \n        Arme: " + actions.getCarteArme().getNom() + "\n        Personnage: " + actions.getCartePersonnage().getNom() +
+                            "\n        Piéce: " + actions.getCartePiece().getNom() + "\n        Carte montrer : oui \n";
+                else
+                    log = log + "-Hypothese : \n        Arme: " + actions.getCarteArme().getNom() + "\n        Personnage: " + actions.getCartePersonnage().getNom() +
+                            "\n        Piéce: " + actions.getCartePiece().getNom() + "\n        Carte montrer : nom \n";
             }
             else{
                 log = log + "-Accusation : \n        Arme: " + actions.getCarteArme().getNom() + "\n        Personnage: " + actions.getCartePersonnage().getNom() +
-                        "\n        Piéce: " + actions.getCartePiece().getNom() + "\n        Carte montrer : "+ actions.getCarteMontrer().getNom() + "\n";
+                        "\n        Piéce: " + actions.getCartePiece().getNom() + "\n";
             }
         }
         texteLog.setText(log);
