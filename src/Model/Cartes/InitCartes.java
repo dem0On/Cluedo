@@ -35,9 +35,6 @@ public class InitCartes {
         paquetLieu.add(new CarteLieu("Le Hall", new Image("Image/Piece/hall.jpg")));
         paquetLieu.add(new CarteLieu("La Librairie", new Image("Image/Piece/library.jpg")));
         paquetLieu.add(new CarteLieu("Le Bureau", new Image("Image/Piece/study.jpg")));
-
-
-        melangerPaquets();
     }
 
     public PaquetCartes getPaquetSuspect() {
@@ -52,7 +49,7 @@ public class InitCartes {
         return paquetLieu;
     }
 
-    private void melangerPaquets(){
+    public void melangerPaquets(){
         paquetArme.melangerPacket();
         paquetLieu.melangerPacket();
         paquetSuspect.melangerPacket();

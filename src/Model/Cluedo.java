@@ -53,6 +53,7 @@ public class Cluedo {
 
     private void initJeu(Color[] tabJoueur){
         InitCartes initCartes = new InitCartes();
+        initCartes.melangerPaquets();
         PaquetCartes paquetLieu = initCartes.getPaquetLieu();
         PaquetCartes paquetArme = initCartes.getPaquetArme();
         PaquetCartes paquetMeutrtrier = initCartes.getPaquetSuspect();

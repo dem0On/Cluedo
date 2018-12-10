@@ -11,6 +11,10 @@ public class  Carte {
         this.imageCarte = imageCarte;
     }
 
+    public boolean equal(Carte carte){
+        return nom==carte.getNom();
+    }
+
     public String print(){
         return nom;
     }
