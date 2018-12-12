@@ -15,6 +15,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.control.MenuBar;
+
 
 import java.awt.*;
 
@@ -25,6 +27,7 @@ public class Fenetre extends Parent {
     private PopUp popUp;
     private Button buttonhypothese;
     private Button buttonAccusation;
+    private Button buttonListeHypothese;
     private Label labelNbJoueur;
     private TextArea texteLog;
 
@@ -34,6 +37,7 @@ public class Fenetre extends Parent {
         this.cluedo = cluedo;
         this.popUp.getDebutTour().setFenetre(this);
         canvas = new Canvas(800, 800);
+
         VBox vBox = new VBox();
         HBox hBox = new HBox();
         actualiserPlateau();
@@ -52,10 +56,12 @@ public class Fenetre extends Parent {
         HBox hBox1 = new HBox();
         HBox hBoxJoueur = new HBox();
 
+
         borderPaneRoot = new BorderPane();
         texteLog = new TextArea();
         buttonhypothese = new Button("Proposer une hypothèse");
         buttonAccusation = new Button("Accusation !");
+        buttonListeHypothese = new Button("Vos Hypothèses");
         buttonhypothese.setVisible(false);
         labelNbJoueur = new Label("Au tour de " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom() + "  Nombre de déplacement restant : " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getNbfDeplacement());
 
@@ -67,7 +73,9 @@ public class Fenetre extends Parent {
 
         hBox1.getChildren().add(buttoncarte);
         hBox1.getChildren().add(buttonAccusation);
+        hBox1.getChildren().add(buttonListeHypothese);
         hBox1.getChildren().add(buttonhypothese);
+
 
         hBoxJoueur.getChildren().add(buttonNote);
         hBoxJoueur.getChildren().add(buttonSuivant);
@@ -83,6 +91,10 @@ public class Fenetre extends Parent {
 
         buttonAccusation.setOnAction(value->{
             popUp.getAccusation().afficher();
+        });
+
+        buttonListeHypothese.setOnAction(value->{
+            popUp.getHypothese().afficherListeHypothese();
         });
 
         buttonSuivant.setOnAction(value -> {

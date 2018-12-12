@@ -36,7 +36,6 @@ public class Appli extends Application {
 
         Fenetre fenetre = new Fenetre(cluedo, popUp);
 
-
         Scene scene = new Scene(fenetre,Width,Heigth, Color.LIGHTGREY);
 
         primaryStage.setScene(scene);

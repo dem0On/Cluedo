@@ -309,7 +309,6 @@ public class Accusation {
     private void Comparaison(){
 
         gridPane.getChildren().clear();
-        BorderPane border = new BorderPane();
 
         Label labelJoueur = new Label("Votre Accusation : ");
         Label labelMain = new Label("Le Suspect : ");
