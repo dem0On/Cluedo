@@ -7,12 +7,21 @@ import javafx.stage.Stage;
 
 public class Appli extends Application {
 
+    private PopUp popUp;
+    private Stage primaryStage;
 
     @Override
     public void start(Stage primaryStage){
+        this.primaryStage = primaryStage;
         primaryStage.setTitle("Cluedo");
-        Color[] tab = {Color.RED, Color.GREEN, Color.BLUE};
-        Cluedo cluedo = new Cluedo(tab);
+        FenetreMenu fenetre = new FenetreMenu(this);
+        Scene scene = new Scene(fenetre,500, 500, Color.LIGHTGREY);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public void lancerJeu(Color[] tabCouleurJoueur, String[] nomJoueur){
+        Cluedo cluedo = new Cluedo(tabCouleurJoueur, nomJoueur);
         final int Width = 1000; // 1000 avec log ou 800 sans log pour la fenetre
         final int Heigth = 825;
 
@@ -23,7 +32,7 @@ public class Appli extends Application {
         Hypothese hypothese = new Hypothese(cluedo, primaryStage);
         LancerDes lancerDes = new LancerDes(cluedo, primaryStage);
 
-        PopUp popUp = new PopUp(popUpMain, accusation, noteView, debutTour, hypothese, lancerDes);
+        popUp = new PopUp(popUpMain, accusation, noteView, debutTour, hypothese, lancerDes);
 
         Fenetre fenetre = new Fenetre(cluedo, popUp);
 
@@ -31,7 +40,6 @@ public class Appli extends Application {
         Scene scene = new Scene(fenetre,Width,Heigth, Color.LIGHTGREY);
 
         primaryStage.setScene(scene);
-        primaryStage.show();
         fenetre.lancerDes();
         fenetre.actualiserInterface();
     }

@@ -22,16 +22,16 @@ public class Cluedo {
     public Meurtrier meutrier;
     private TypeCase plateau[][];
 
-    public Cluedo(Color[] tabJoueur) {
+    public Cluedo(Color[] tabCouleurJoueur, String[] nomJoueur) {
         log = new HistoryAction();
         testerLog();
-        this.nbJoueur = tabJoueur.length;
+        this.nbJoueur = tabCouleurJoueur.length;
         joueurCourant = 0;
         listJoueurs = new ArrayList<>();
         listJoueursElliminer = new ArrayList<>();
         InitPlateau initPlateau = new InitPlateau();
         plateau = initPlateau.getPlateau();
-        initJeu(tabJoueur);
+        initJeu(tabCouleurJoueur, nomJoueur);
     }
 
     private Note nouvelleNote(InitCartes initCartes) {
@@ -51,7 +51,7 @@ public class Cluedo {
         return note;
     }
 
-    private void initJeu(Color[] tabJoueur){
+    private void initJeu(Color[] tabCouleurJoueur, String[] nomJoueur){
         InitCartes initCartes = new InitCartes();
         initCartes.melangerPaquets();
         PaquetCartes paquetLieu = initCartes.getPaquetLieu();
@@ -69,9 +69,9 @@ public class Cluedo {
         paquetCartes.add(paquetMeutrtrier);
         paquetCartes.melangerPacket();
 
-        for (int i = 0; i < tabJoueur.length; i++) {
+        for (int i = 0; i < tabCouleurJoueur.length; i++) {
             Note note = nouvelleNote(new InitCartes());
-            listJoueurs.add(new Main("Joueur"+i, note, new Pions(tabJoueur[i])));
+            listJoueurs.add(new Main(nomJoueur[i], note, new Pions(tabCouleurJoueur[i])));
         }
 
         int taillePaquet = paquetCartes.size();
