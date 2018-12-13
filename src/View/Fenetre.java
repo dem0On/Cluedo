@@ -174,9 +174,9 @@ public class Fenetre extends Parent {
         String log = "Log : \n";
         for (Actions actions : cluedo.getLog().getListActions()) {
             if(actions.isHypothese()){
-                log = log + "-Hypothese :      \n " +
+                log = log + "-Hypothese :      \n        " +
                         "Arme: " + actions.getCarteArme().getNom() + "\n        " +
-                        "Personnage: " + actions.getCartePersonnage().getNom() +"\n       " +
+                        "Personnage: " + actions.getCartePersonnage().getNom() +"\n        " +
                         "Pièce: " + actions.getCartePiece().getNom() + "\n";
             }
             else{

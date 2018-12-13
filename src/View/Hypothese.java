@@ -11,6 +11,7 @@ import javafx.geometry.Orientation;
 import javafx.geometry.VerticalDirection;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import Model.Joueurs.Main;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollBar;
@@ -34,11 +35,12 @@ public class Hypothese {
     private ArrayList<Carte>listHypo;
     private static InitCartes initCartes;
     private ScrollBar sc;
+
     private int value=1000;
     private int value2=50;
 
     public Hypothese(Cluedo cluedo, Stage primaryStage){
-        Group root = new Group ();
+
         sc = new ScrollBar ();
         popup = new Stage();
         initCartes = new InitCartes();
@@ -58,7 +60,6 @@ public class Hypothese {
 
 
         Scene scene = new Scene(borderPane);
-
         sc.setLayoutX (scene.getWidth () - sc.getWidth ());
 
 
@@ -71,11 +72,6 @@ public class Hypothese {
 
     public void afficher(){
         afficherPersonnages();
-        popup.show();
-    }
-
-    public void afficherListeHypothese(){
-        afficherListeHypo();
         popup.show();
     }
 
@@ -342,46 +338,42 @@ public class Hypothese {
     }
 
     private void comparaison(){
+        gridPane.getChildren().clear();
+
+        Label labelJoueur = new Label("Votre hypothèse : ");
+        Button buttonJoueur;
+        borderPane.setTop(labelJoueur);
+        int compteur=0;
+
+        for (Carte j : hypotheses) {
+            buttonJoueur= new Button();
+            buttonJoueur.setGraphic(new ImageView(j.getImageCarte()));
+            gridPane.add(buttonJoueur,compteur, 0);
+            compteur+=1;
+        }
+
+        afficherMain(cluedo.getListJoueurs().get(cluedo.getJoueurCourant()+1));
+
+
+
+
         Actions action = new ActionHypothese(hypotheses.get(0), hypotheses.get(1), hypotheses.get(2));
         action.setCarteMontrer(hypotheses.get(0));
         cluedo.getLog().add(action);
-        popup.close();
+
     }
-
-    private void afficherListeHypo() {
-
-        sc.valueProperty().addListener(new ChangeListener<Number>() {
-            public void changed(ObservableValue<? extends Number> ov,
-                                Number old_val, Number new_val) {
-                borderPane.setLayoutY(-new_val.doubleValue());
-            }
-        });
-
-        gridPane.getChildren().clear();
-        Button buttonhypothese;
-
-        int compteur=0;
-        int compteur2=0;
-
-        for (Carte j : hypotheses) {
-            buttonhypothese= new Button();
-            buttonhypothese.setGraphic(new ImageView(j.getImageCarte()));
-
-            gridPane.add(buttonhypothese, compteur, compteur2);
-
-            compteur+=1;
-            if (compteur %3==0) {
-                compteur=0;
-                compteur2 += 1;
-
-
-            }
+    public void afficherMain(Main main){
+        Button buttuonMainJoueur;
+        int compt = 0;
+        for (Carte j : main.getMain()) {
+            buttuonMainJoueur= new Button();
+            buttuonMainJoueur.setGraphic(new ImageView(j.getImageCarte()));
+            gridPane.add(buttuonMainJoueur,compt, 1);
+            compt+=1;
         }
 
-
-
-
     }
+
 
     public ArrayList<Carte> getHypotheses() {
         return hypotheses;

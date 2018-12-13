@@ -1,6 +1,7 @@
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -20,6 +21,7 @@ public class FenetreMenu extends Parent {
     private Appli appli;
     private Color[] tabCouleur;
     private Canvas canvas;
+    private BorderPane bd;
 
     private String[] tabNom;
     private RadioButton[] tabRadioButton;
@@ -27,6 +29,7 @@ public class FenetreMenu extends Parent {
     public FenetreMenu(Appli appli) {
 
         HBox hBox = new HBox();
+        bd =new BorderPane();
         this.appli = appli;
         vBox = new VBox();
         canvas = new Canvas(800, 800);
@@ -36,14 +39,9 @@ public class FenetreMenu extends Parent {
         this.getChildren().add(hBox);
     }
 
-    public Canvas getCanvas() {
-        return canvas;
-    }
 
     private void initMenu(){
         vBox.getChildren().clear();
-        canvas.getGraphicsContext2D().restore();
-        canvas.getGraphicsContext2D().drawImage(new Image("Image/plateau.jpg"), 0, 0);
         Button buttonJouer = new Button("Jouer");
         Button buttonQuitter = new Button("Quitter");
         buttonJouer.setOnAction(value ->{
