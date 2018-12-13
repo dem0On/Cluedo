@@ -27,7 +27,7 @@ public class Fenetre extends Parent {
     private PopUp popUp;
     private Button buttonhypothese;
     private Button buttonAccusation;
-    private Button buttonListeHypothese;
+
     private Label labelNbJoueur;
     private TextArea texteLog;
 
@@ -61,7 +61,7 @@ public class Fenetre extends Parent {
         texteLog = new TextArea();
         buttonhypothese = new Button("Proposer une hypothèse");
         buttonAccusation = new Button("Accusation !");
-        buttonListeHypothese = new Button("Vos Hypothèses");
+
         buttonhypothese.setVisible(false);
         labelNbJoueur = new Label("Au tour de " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNom() + "  Nombre de déplacement restant : " + cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getNbfDeplacement());
 
@@ -73,7 +73,6 @@ public class Fenetre extends Parent {
 
         hBox1.getChildren().add(buttoncarte);
         hBox1.getChildren().add(buttonAccusation);
-        hBox1.getChildren().add(buttonListeHypothese);
         hBox1.getChildren().add(buttonhypothese);
 
 
@@ -91,10 +90,6 @@ public class Fenetre extends Parent {
 
         buttonAccusation.setOnAction(value->{
             popUp.getAccusation().afficher();
-        });
-
-        buttonListeHypothese.setOnAction(value->{
-            popUp.getHypothese().afficherListeHypothese();
         });
 
         buttonSuivant.setOnAction(value -> {
@@ -179,16 +174,14 @@ public class Fenetre extends Parent {
         String log = "Log : \n";
         for (Actions actions : cluedo.getLog().getListActions()) {
             if(actions.isHypothese()){
-                if(actions.getCarteMontrer() != null)
-                    log = log + "-Hypothese : \n        Arme: " + actions.getCarteArme().getNom() + "\n        Personnage: " + actions.getCartePersonnage().getNom() +
-                            "\n        Piéce: " + actions.getCartePiece().getNom() + "\n        Carte montrer : oui \n";
-                else
-                    log = log + "-Hypothese : \n        Arme: " + actions.getCarteArme().getNom() + "\n        Personnage: " + actions.getCartePersonnage().getNom() +
-                            "\n        Piéce: " + actions.getCartePiece().getNom() + "\n        Carte montrer : nom \n";
+                log = log + "-Hypothese :      \n " +
+                        "Arme: " + actions.getCarteArme().getNom() + "\n        " +
+                        "Personnage: " + actions.getCartePersonnage().getNom() +"\n       " +
+                        "Pièce: " + actions.getCartePiece().getNom() + "\n";
             }
             else{
                 log = log + "-Accusation : \n        Arme: " + actions.getCarteArme().getNom() + "\n        Personnage: " + actions.getCartePersonnage().getNom() +
-                        "\n        Piéce: " + actions.getCartePiece().getNom() + "\n";
+                        "\n        Pièce: " + actions.getCartePiece().getNom() + "\n";
             }
         }
         texteLog.setText(log);

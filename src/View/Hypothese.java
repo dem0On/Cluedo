@@ -1,7 +1,10 @@
 package View;
 import Model.Cartes.Carte;
+import Model.Cartes.CarteSuspect;
 import Model.Cartes.InitCartes;
 import Model.Cluedo;
+import Model.Joueurs.ActionHypothese;
+import Model.Joueurs.Actions;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.geometry.Orientation;
@@ -19,11 +22,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.util.ArrayList;
 
-/*
 
-    MODIFIER TOUTE LES iMAGES PAR CARTE ( IL EXISTE LA CLASSE INITCARTE QUI A TOUS LES CARTES DU JEU )
-
- */
 
 public class Hypothese {
     private Cluedo cluedo;
@@ -81,6 +80,7 @@ public class Hypothese {
     }
 
     void afficherPersonnages() {
+        hypotheses.clear();
         gridPane.getChildren().clear();
 
         Image imageBlanc = new Image("Image/Personnage/blanc.jpg");
@@ -342,8 +342,9 @@ public class Hypothese {
     }
 
     private void comparaison(){
-
-        System.out.println(hypotheses);
+        Actions action = new ActionHypothese(hypotheses.get(0), hypotheses.get(1), hypotheses.get(2));
+        action.setCarteMontrer(hypotheses.get(0));
+        cluedo.getLog().add(action);
         popup.close();
     }
 
@@ -376,6 +377,8 @@ public class Hypothese {
 
             }
         }
+
+
 
 
     }

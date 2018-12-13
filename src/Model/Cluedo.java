@@ -24,7 +24,6 @@ public class Cluedo {
 
     public Cluedo(Color[] tabCouleurJoueur, String[] nomJoueur) {
         log = new HistoryAction();
-        testerLog();
         this.nbJoueur = tabCouleurJoueur.length;
         joueurCourant = 0;
         listJoueurs = new ArrayList<>();
@@ -120,18 +119,7 @@ public class Cluedo {
         return log;
     }
 
-    private void testerLog(){
-        Actions action = new ActionHypothese(new CarteSuspect("Le Violet", new Image("Image/Personnage/violet.jpg")), new CarteArme("Le chandelier", new Image("Image/Arme/candlestick.jpg")), new CarteLieu("La salle a manger", new Image("Image/Piece/diningroom.jpg")));
-        action.setCarteMontrer(new CarteSuspect("Le Violet", new Image("Image/Personnage/violet.jpg")));
-        log.add(action);
 
-        Actions action2 = new ActionAccusation(new CarteSuspect("Le Violet", new Image("Image/Personnage/violet.jpg")), new CarteArme("Le chandelier", new Image("Image/Arme/candlestick.jpg")), new CarteLieu("La salle a manger", new Image("Image/Piece/diningroom.jpg")));
-        action2.setCarteMontrer(new CarteSuspect("Le Violet", new Image("Image/Personnage/violet.jpg")));
-        log.add(action2);
-
-        Actions action3 = new ActionHypothese(new CarteSuspect("Le Violet", new Image("Image/Personnage/violet.jpg")), new CarteArme("Le chandelier", new Image("Image/Arme/candlestick.jpg")), new CarteLieu("La salle a manger", new Image("Image/Piece/diningroom.jpg")));
-        log.add(action3);
-    }
 
     public void addElliminer(){
         listJoueursElliminer.add(listJoueurs.get(joueurCourant));
