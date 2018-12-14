@@ -119,8 +119,6 @@ public class Cluedo {
         return log;
     }
 
-
-
     public void addElliminer(){
         listJoueursElliminer.add(listJoueurs.get(joueurCourant));
     }

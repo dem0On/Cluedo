@@ -352,17 +352,15 @@ public class Hypothese {
             compteur+=1;
         }
 
-        afficherMain(cluedo.getListJoueurs().get(cluedo.getJoueurCourant()+1));
-
-
 
 
         Actions action = new ActionHypothese(hypotheses.get(0), hypotheses.get(1), hypotheses.get(2));
+        afficherMain(cluedo.getListJoueurs().get(cluedo.getJoueurCourant()+1),action);
         action.setCarteMontrer(hypotheses.get(0));
         cluedo.getLog().add(action);
 
     }
-    public void afficherMain(Main main){
+    public void afficherMain(Main main, Actions action){
         Button buttuonMainJoueur;
         int compt = 0;
         for (Carte j : main.getMain()) {
@@ -370,6 +368,10 @@ public class Hypothese {
             buttuonMainJoueur.setOnAction(value ->{
                 if(isCarteHypothese(j)){
                     System.out.println("montrer");
+                    action.setCarteMontrer(j);
+                    System.out.println(action.getCarteMontrer());
+                    popup.close();
+
                 }
                 else{
                     System.out.println("n'est pas montrer");
