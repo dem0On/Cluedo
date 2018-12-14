@@ -367,11 +367,26 @@ public class Hypothese {
         int compt = 0;
         for (Carte j : main.getMain()) {
             buttuonMainJoueur= new Button();
+            buttuonMainJoueur.setOnAction(value ->{
+                if(isCarteHypothese(j)){
+                    System.out.println("montrer");
+                }
+                else{
+                    System.out.println("n'est pas montrer");
+                }
+            });
             buttuonMainJoueur.setGraphic(new ImageView(j.getImageCarte()));
             gridPane.add(buttuonMainJoueur,compt, 1);
             compt+=1;
         }
 
+    }
+
+    private boolean isCarteHypothese(Carte carte){
+        for (Carte carteHypothese : hypotheses) {
+            if (carteHypothese.equal(carte)) return true;
+        }
+        return false;
     }
 
 
