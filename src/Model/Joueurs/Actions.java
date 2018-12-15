@@ -7,11 +7,15 @@ public class Actions {
     private Carte carteArme;
     private Carte cartePiece;
     private Carte carteMontrer;
+    private Main joueurQuiAFait;
+    private Main joueurQuiAMontrer;
 
-    public Actions(Carte cartePersonnage, Carte carteArme, Carte cartePiece) {
+    public Actions(Carte cartePersonnage, Carte carteArme, Carte cartePiece, Main joueurQuiAFait) {
         this.cartePersonnage = cartePersonnage;
         this.carteArme = carteArme;
         this.cartePiece = cartePiece;
+        this.joueurQuiAFait = joueurQuiAFait;
+        joueurQuiAMontrer = null;
         carteMontrer = null;
     }
 
@@ -37,5 +41,17 @@ public class Actions {
 
     public Carte getCarteMontrer() {
         return carteMontrer;
+    }
+
+    public void setJoueurQuiAMontrer(Main joueurQuiAMontrer) {
+        this.joueurQuiAMontrer = joueurQuiAMontrer;
+    }
+
+    public Main getJoueurQuiAFait() {
+        return joueurQuiAFait;
+    }
+
+    public Main getJoueurQuiAMontrer() {
+        return joueurQuiAMontrer;
     }
 }

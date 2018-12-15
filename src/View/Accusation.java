@@ -344,7 +344,7 @@ public class Accusation {
         listImageMeutrier.add(meurtrier.getCarteArme());
         listImageMeutrier.add(meurtrier.getCarteLieu());
 
-        Actions action2 = new ActionAccusation(accusation.get(0), accusation.get(1), accusation.get(2));
+        Actions action2 = new ActionAccusation(accusation.get(0), accusation.get(1), accusation.get(2), cluedo.getListJoueurs().get(cluedo.getJoueurCourant()));
         cluedo.getLog().add(action2);
 
         if(suspectEstTrouvee(listImageMeutrier, accusation)){

@@ -35,6 +35,7 @@ public class Hypothese {
     private ArrayList<Carte>listHypo;
     private static InitCartes initCartes;
     private ScrollBar sc;
+    private Fenetre fenetre;
 
     private int value=1000;
     private int value2=50;
@@ -354,9 +355,8 @@ public class Hypothese {
 
 
 
-        Actions action = new ActionHypothese(hypotheses.get(0), hypotheses.get(1), hypotheses.get(2));
+        Actions action = new ActionHypothese(hypotheses.get(0), hypotheses.get(1), hypotheses.get(2), cluedo.getListJoueurs().get(cluedo.getJoueurCourant()));
         afficherMain(cluedo.getListJoueurs().get(cluedo.getJoueurCourant()+1),action);
-        action.setCarteMontrer(hypotheses.get(0));
         cluedo.getLog().add(action);
 
     }
@@ -367,14 +367,13 @@ public class Hypothese {
             buttuonMainJoueur= new Button();
             buttuonMainJoueur.setOnAction(value ->{
                 if(isCarteHypothese(j)){
-                    System.out.println("montrer");
                     action.setCarteMontrer(j);
-                    System.out.println(action.getCarteMontrer());
+                    action.setJoueurQuiAMontrer(main);
                     popup.close();
-
+                    fenetre.actualiserLog();
                 }
                 else{
-                    System.out.println("n'est pas montrer");
+                    fenetre.afficheErreur("Cette carte ne peut pas etre montrer", "erreur Carte");
                 }
             });
             buttuonMainJoueur.setGraphic(new ImageView(j.getImageCarte()));
@@ -396,4 +395,7 @@ public class Hypothese {
         return hypotheses;
     }
 
+    public void setFenetre(Fenetre fenetre) {
+        this.fenetre = fenetre;
+    }
 }

@@ -7,6 +7,7 @@ import Model.Joueurs.Pions;
 import Model.Plateau.TypeCase;
 import javafx.scene.Parent;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -15,7 +16,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.control.MenuBar;
 
 
 import java.awt.*;
@@ -36,6 +36,7 @@ public class Fenetre extends Parent {
         this.popUp = popUp;
         this.cluedo = cluedo;
         this.popUp.getDebutTour().setFenetre(this);
+        this.popUp.getHypothese().setFenetre(this);
         canvas = new Canvas(800, 800);
 
         VBox vBox = new VBox();
@@ -174,16 +175,27 @@ public class Fenetre extends Parent {
         String log = "Log : \n";
         for (Actions actions : cluedo.getLog().getListActions()) {
             if(actions.isHypothese()){
-                log = log + "-Hypothese :      \n        " +
+                log = log + "-"+ actions.getJoueurQuiAFait().getNom() +" a fait  une hypothese :    \n        " +
+                        "Arme: " + actions.getCarteArme().getNom() + "\n        " +
+                        "Personnage: " + actions.getCartePersonnage().getNom() +"\n        " +
+                        "Pièce: " + actions.getCartePiece().getNom() + "\n        "+
+                        actions.getJoueurQuiAMontrer().getNom() + " a montrer une carte\n";
+            }
+            else{
+                log = log + "-"+ actions.getJoueurQuiAFait().getNom() +" a fait  une accusation :    \n        " +
                         "Arme: " + actions.getCarteArme().getNom() + "\n        " +
                         "Personnage: " + actions.getCartePersonnage().getNom() +"\n        " +
                         "Pièce: " + actions.getCartePiece().getNom() + "\n";
             }
-            else{
-                log = log + "-Accusation : \n        Arme: " + actions.getCarteArme().getNom() + "\n        Personnage: " + actions.getCartePersonnage().getNom() +
-                        "\n        Pièce: " + actions.getCartePiece().getNom() + "\n";
-            }
         }
         texteLog.setText(log);
+    }
+
+    public void afficheErreur(String erreur, String title){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+
+        alert.setContentText(erreur);
+        alert.showAndWait();
     }
 }

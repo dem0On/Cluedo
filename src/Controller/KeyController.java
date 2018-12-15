@@ -28,30 +28,30 @@ public class KeyController implements EventHandler<KeyEvent> {
                     cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(0, -1);
                     cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().deplacement();
                     mettreHypothese();
-                } else System.out.println("bloqué");
+                } else fenetre.afficheErreur("vous etez bloquer", "déplacement");
             } else if (event.getCode() == KeyCode.S) {
                 if (isDeplacementBas(x, y)) {
                     cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(0, 1);
                     cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().deplacement();
                     mettreHypothese();
-                } else System.out.println("bloqué");
+                } else fenetre.afficheErreur("vous etez bloquer", "déplacement");
             } else if (event.getCode() == KeyCode.Q) {
                 if (isDeplacementGauche(x, y)) {
                     cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(-1, 0);
                     cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().deplacement();
                     mettreHypothese();
-                } else System.out.println("bloqué");
+                } else fenetre.afficheErreur("vous etez bloquer", "déplacement");
             } else if (event.getCode() == KeyCode.D) {
                 if (isDeplacementDroite(x, y)) {
                     cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().getPoint().translate(1, 0);
                     cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getPion().deplacement();
                     mettreHypothese();
-                } else System.out.println("bloqué");
+                } else fenetre.afficheErreur("vous etez bloquer", "déplacement");
             }
             fenetre.actualiserPlateau();
             fenetre.actualiserInterface();
         }
-        else System.out.println("il y a plus de déplacement");
+        else fenetre.afficheErreur("vous n'avez plus de déplacement", "déplacement");
     }
 
     private void mettreHypothese(){
