@@ -23,13 +23,6 @@ public class Main {
         main.add(carte);
     }
 
-    public void print(){
-        System.out.println("Main:");
-        for (Carte carte : main) {
-            System.out.println("- " + carte.print());
-        }
-    }
-
     public Note getNote() {
         return note;
     }

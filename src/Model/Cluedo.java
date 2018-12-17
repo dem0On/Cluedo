@@ -4,7 +4,6 @@ import Model.Cartes.*;
 import Model.Joueurs.*;
 import Model.Plateau.InitPlateau;
 import Model.Plateau.TypeCase;
-import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 import java.awt.*;
