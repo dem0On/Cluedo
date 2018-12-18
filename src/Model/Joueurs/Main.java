@@ -5,6 +5,7 @@ import Model.Cartes.Carte;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Main {
     private String nom;
@@ -27,10 +28,10 @@ public class Main {
         return note;
     }
 
-    public Point lancerDes(){
+    public Point lancerDes(Random random){
         int des1 , des2, somme;
-        des1 = (int) (Math.random()*6) + 1;
-        des2 = (int) (Math.random()*6) + 1;
+        des1 = random.nextInt(6)+1;
+        des2 = random.nextInt(6)+1;
         somme = des1 + des2;
         pion.setNbfDeplacement(somme);
         return new Point(des1, des2);

@@ -9,6 +9,7 @@ import javafx.scene.paint.Color;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Cluedo {
     private List<Main> listJoueurs;
@@ -16,12 +17,14 @@ public class Cluedo {
     private int nbJoueur;
     private int joueurCourant;
     private HistoryAction log;
+    private boolean isEnd;
 
 
     public Meurtrier meutrier;
     private TypeCase plateau[][];
 
     public Cluedo(Color[] tabCouleurJoueur, String[] nomJoueur) {
+        isEnd = false;
         log = new HistoryAction();
         this.nbJoueur = tabCouleurJoueur.length;
         joueurCourant = 0;
@@ -88,12 +91,12 @@ public class Cluedo {
             }
         }
         if(listJoueursElliminer.size()==listJoueurs.size()){
-            System.out.println("Fin de Partie");
+            isEnd = true;
         }
     }
 
     public Point lancerDes(){
-        return listJoueurs.get(joueurCourant).lancerDes();
+        return listJoueurs.get(joueurCourant).lancerDes(new Random());
     }
 
     public List<Main> getListJoueurs() {
@@ -120,5 +123,9 @@ public class Cluedo {
 
     public void addElliminer(){
         listJoueursElliminer.add(listJoueurs.get(joueurCourant));
+    }
+
+    public boolean isEnd() {
+        return isEnd;
     }
 }

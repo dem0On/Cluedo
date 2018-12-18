@@ -39,10 +39,6 @@ public class Actions {
         return cartePiece;
     }
 
-    public Carte getCarteMontrer() {
-        return carteMontrer;
-    }
-
     public void setJoueurQuiAMontrer(Main joueurQuiAMontrer) {
         this.joueurQuiAMontrer = joueurQuiAMontrer;
     }

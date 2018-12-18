@@ -1,7 +1,5 @@
 package Model.Cartes;
 
-import javafx.scene.image.Image;
-
 public class InitCartes {
     private PaquetCartes paquetSuspect;
     private PaquetCartes paquetArme;

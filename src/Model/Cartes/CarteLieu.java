@@ -1,6 +1,5 @@
 package Model.Cartes;
 
-import javafx.scene.image.Image;
 
 public class CarteLieu extends Carte {
 
