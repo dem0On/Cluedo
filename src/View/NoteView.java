@@ -34,7 +34,6 @@ public class NoteView {
     public void afficherNote(Main main){
         vBox1.getChildren().clear();
         for (int i = 0; i < main.getNote().getListNote().size(); i++) {
-            HBox hBox = new HBox();
             CheckNote checkNote = cluedo.getListJoueurs().get(cluedo.getJoueurCourant()).getNote().getListNote().get(i);
             CheckBox checkBox = new CheckBox(checkNote.getNom());
             if(checkNote.isCheck()) checkBox.setSelected(true);

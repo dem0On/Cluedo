@@ -1,15 +1,10 @@
 package View;
 import Model.Cartes.Carte;
-import Model.Cartes.CarteSuspect;
 import Model.Cartes.InitCartes;
 import Model.Cluedo;
 import Model.Joueurs.ActionHypothese;
 import Model.Joueurs.Actions;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.geometry.Orientation;
-import javafx.geometry.VerticalDirection;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import Model.Joueurs.Main;
 import javafx.scene.control.Button;
@@ -391,11 +386,6 @@ public class Hypothese {
             if (carteHypothese.equal(carte)) return true;
         }
         return false;
-    }
-
-
-    public ArrayList<Carte> getHypotheses() {
-        return hypotheses;
     }
 
     public void setFenetre(Fenetre fenetre) {
