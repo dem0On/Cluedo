@@ -38,9 +38,10 @@ public class PopUpMain extends Parent {
     }
 
     public void afficherMain(Main main){
+        AffectCarte affectCarte = new AffectCarte();
         canvas.getGraphicsContext2D().restore();
         for (int i = 0; i < main.getMain().size(); i++) {
-            canvas.getGraphicsContext2D().drawImage(main.getMain().get(i).getImageCarte(), 20+i*160, 50);
+            canvas.getGraphicsContext2D().drawImage(affectCarte.getLIST_IMAGE()[main.getMain().get(i).getImageCarte()], 20+i*160, 50);
         }
         popup.show();
     }

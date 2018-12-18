@@ -310,6 +310,8 @@ public class Accusation {
 
         gridPane.getChildren().clear();
 
+        AffectCarte affectCarte = new AffectCarte();
+
         Label labelJoueur = new Label("Votre Accusation : ");
         Label labelMain = new Label("Le Suspect : ");
         Button buttonJoueur;
@@ -321,7 +323,7 @@ public class Accusation {
 
         for (Carte j : accusation) {
             buttonJoueur= new Button();
-            buttonJoueur.setGraphic(new ImageView(j.getImageCarte()));
+            buttonJoueur.setGraphic(new ImageView(affectCarte.getLIST_IMAGE()[j.getImageCarte()]));
             gridPane.add(buttonJoueur,compteur, 0);
             compteur+=1;
         }
@@ -331,9 +333,9 @@ public class Accusation {
         buttonMeurtrierPerso = new Button();
         buttonMeurtrierArme = new Button();
         buttonMeurtrierPiece = new Button();
-        buttonMeurtrierPerso.setGraphic(new ImageView(meurtrier.getCarteSuspect().getImageCarte()));
-        buttonMeurtrierArme.setGraphic(new ImageView(meurtrier.getCarteArme().getImageCarte()));
-        buttonMeurtrierPiece.setGraphic(new ImageView(meurtrier.getCarteLieu().getImageCarte()));
+        buttonMeurtrierPerso.setGraphic(new ImageView(affectCarte.getLIST_IMAGE()[meurtrier.getCarteSuspect().getImageCarte()]));
+        buttonMeurtrierArme.setGraphic(new ImageView(affectCarte.getLIST_IMAGE()[meurtrier.getCarteArme().getImageCarte()]));
+        buttonMeurtrierPiece.setGraphic(new ImageView(affectCarte.getLIST_IMAGE()[meurtrier.getCarteLieu().getImageCarte()]));
         gridPane.add(labelMain,0,1);
         gridPane.add(buttonMeurtrierPerso,0, 2);
         gridPane.add(buttonMeurtrierArme,1, 2);

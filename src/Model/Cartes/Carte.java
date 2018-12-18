@@ -1,12 +1,11 @@
 package Model.Cartes;
 
-import javafx.scene.image.Image;
 
 public class  Carte {
     protected String nom;
-    protected Image imageCarte;
+    protected int imageCarte;
 
-    public Carte(String nom, Image imageCarte) {
+    public Carte(String nom, int imageCarte) {
         this.nom = nom;
         this.imageCarte = imageCarte;
     }
@@ -19,7 +18,7 @@ public class  Carte {
         return nom;
     }
 
-    public Image getImageCarte() {
+    public int getImageCarte() {
         return imageCarte;
     }
 

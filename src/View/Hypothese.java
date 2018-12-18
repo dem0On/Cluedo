@@ -341,6 +341,8 @@ public class Hypothese {
     private void comparaison(){
         gridPane.getChildren().clear();
 
+        AffectCarte affectCarte = new AffectCarte();
+
         Label labelJoueur = new Label("Votre hypothèse : ");
         Button buttonJoueur;
         borderPane.setTop(labelJoueur);
@@ -348,7 +350,7 @@ public class Hypothese {
 
         for (Carte j : hypotheses) {
             buttonJoueur= new Button();
-            buttonJoueur.setGraphic(new ImageView(j.getImageCarte()));
+            buttonJoueur.setGraphic(new ImageView(affectCarte.getLIST_IMAGE()[j.getImageCarte()]));
             gridPane.add(buttonJoueur,compteur, 0);
             compteur+=1;
         }
@@ -361,6 +363,7 @@ public class Hypothese {
 
     }
     public void afficherMain(Main main, Actions action){
+        AffectCarte affectCarte = new AffectCarte();
         Button buttuonMainJoueur;
         int compt = 0;
         for (Carte j : main.getMain()) {
@@ -376,7 +379,7 @@ public class Hypothese {
                     fenetre.afficheErreur("Cette carte ne peut pas etre montrer", "erreur Carte");
                 }
             });
-            buttuonMainJoueur.setGraphic(new ImageView(j.getImageCarte()));
+            buttuonMainJoueur.setGraphic(new ImageView(affectCarte.getLIST_IMAGE()[j.getImageCarte()]));
             gridPane.add(buttuonMainJoueur,compt, 1);
             compt+=1;
         }
